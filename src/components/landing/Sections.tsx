@@ -1,4 +1,4 @@
-import { PERSONAS, BRAND } from "@/lib/config";
+import { PERSONAS, BRAND, PROBLEMS } from "@/lib/config";
 
 // Kumpulan section statis landing: urgency, trust, masalah, solusi,
 // komposisi, persona, perbandingan, jaminan.
@@ -32,10 +32,10 @@ export function UrgencyBar({
 }
 
 const TRUST = [
-  { icon: "🌿", title: "100% Bahan Alami", desc: "Habbatussauda & zaitun EV, tanpa pengawet" },
-  { icon: "🚚", title: "Kirim Seluruh Indonesia", desc: "Same-day dispatch sebelum 15.00 WIB" },
-  { icon: "💵", title: "COD Tersedia", desc: "Bayar di tempat saat paket tiba" },
-  { icon: "💬", title: "Konsultasi Gratis", desc: `CS ahli via WhatsApp, ${BRAND.csHours}` },
+  { icon: "Leaf", title: "100% Bahan Alami", desc: "Habbatussauda & zaitun EV, tanpa pengawet" },
+  { icon: "Truck", title: "Kirim Seluruh Indonesia", desc: "Same-day dispatch sebelum 15.00 WIB" },
+  { icon: "Cash", title: "COD Tersedia", desc: "Bayar di tempat saat paket tiba" },
+  { icon: "Chat", title: "Konsultasi Gratis", desc: `CS ahli via WhatsApp, ${BRAND.csHours}` },
 ];
 
 export function TrustBar() {
@@ -56,24 +56,7 @@ export function TrustBar() {
   );
 }
 
-const PROBLEMS = [
-  {
-    title: "Batuk anak bolak-balik datang",
-    desc: "Baru sembuh seminggu, kena lagi. Tidur malam sekeluarga ikut berantakan.",
-  },
-  {
-    title: "Tenggorokan serak karena polusi",
-    desc: "Perjalanan pulang-pergi kerja tiap hari menghirup asap dan debu jalanan.",
-  },
-  {
-    title: "Badan gampang tumbang",
-    desc: "Jadwal padat sedikit saja langsung meriang, masuk angin, tidak fokus.",
-  },
-  {
-    title: "Bolak-balik minum obat kimia",
-    desc: "Ingin pilihan yang lebih alami untuk pemeliharaan harian keluarga.",
-  },
-];
+
 
 export function Problem() {
   return (
@@ -82,8 +65,7 @@ export function Problem() {
         Terasa familiar?
       </p>
       <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-ink text-balance sm:text-4xl">
-        Musim hujan, polusi, jadwal padat — pertahanan tubuh keluarga diuji
-        setiap hari
+        Musim hujan, polusi, dan jadwal padat menguji daya tahan keluarga setiap hari
       </h2>
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {PROBLEMS.map((p, i) => (
@@ -134,7 +116,7 @@ export function Ingredients() {
           Komposisi
         </p>
         <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-white text-balance sm:text-4xl">
-          Dua bahan. Dikenal berabad-abad. Tanpa campuran aneh-aneh.
+           Hanya dua bahan utama: minyak habbatussauda yang kaya thymoquinone dan minyak zaitun extra‑virgin. Kedua bahan ini sudah dipakai secara tradisional sejak ribuan tahun, tanpa tambahan bahan kimia.
         </h2>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {INGREDIENTS.map((ing) => (

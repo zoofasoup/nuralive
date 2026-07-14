@@ -115,44 +115,38 @@ export const PAYMENT_METHODS: PaymentMethod[] = [
 
 export const TESTIMONIALS = [
   {
-    quote:
-      "Anak saya gampang banget batuk kalau musim hujan. Sejak rutin NuraLive dicampur madu, tidurnya jauh lebih nyenyak.",
-    name: "Rina A.",
-    role: "Ibu 2 anak, Bekasi",
+    quote: "Anak saya batuk tiap hujan turun. Setiap pagi kami tambahkan satu sendok madu ke NuraLive, dan dia tidur nyenyak lagi.",
+    name: "Rina Andini",
+    role: "Ibu dua anak, Bekasi",
     segment: "anak",
   },
   {
-    quote:
-      "Kerja lapangan tiap hari kena debu dan asap. Tenggorokan biasanya serak terus — sekarang jauh lebih nyaman.",
-    name: "Dimas P.",
+    quote: "Kerja di lapangan, tiap hari terpapar debu & asap. Sekarang tenggorokan tidak lagi terasa serak, napas lebih lega.",
+    name: "Dimas Pratama",
     role: "Supervisor proyek, Jakarta",
     segment: "polusi",
   },
   {
-    quote:
-      "Awalnya ragu karena rasa minyaknya kuat. Ternyata dicampur sesendok madu langsung aman, anak-anak juga mau.",
-    name: "Sari W.",
+    quote: "Rasanya agak kuat di awal, tapi setelah dicampur madu, anak‑anak suka dan tidak komplain lagi.",
+    name: "Sari Wahyu",
     role: "Guru SD, Depok",
     segment: "anak",
   },
   {
-    quote:
-      "Saya dan suami minum tiap pagi sebelum berangkat. Badan rasanya lebih siap, jarang tumbang walau jadwal padat.",
-    name: "Maya K.",
+    quote: "Saya dan suami minum tiap pagi sebelum kerja. Badan terasa lebih bertenaga, tidak sering lemah meski agenda padat.",
+    name: "Maya Kurnia",
     role: "Karyawan swasta, Tangerang",
     segment: "keluarga",
   },
   {
-    quote:
-      "Pengiriman cepat, packing rapi pakai bubble wrap tebal. Botol kedua langsung repeat lewat website.",
-    name: "Fajar H.",
+    quote: "Pengiriman cepat, kemasan cukup tebal. Saya langsung pesan lagi lewat situs karena sangat puas.",
+    name: "Fajar Haris",
     role: "Wiraswasta, Surabaya",
     segment: "keluarga",
   },
   {
-    quote:
-      "Sudah jadi stok wajib di rumah. Satu botol buat saya, satu buat orang tua — praktis tinggal tetes.",
-    name: "Nadia R.",
+    quote: "Sudah jadi barang wajib di rumah. Satu botol untuk saya, satu lagi untuk orang tua, praktis dan mudah dipakai.",
+    name: "Nadia Rizka",
     role: "Apoteker, Bandung",
     segment: "keluarga",
   },
@@ -189,31 +183,50 @@ export const FAQS = [
   },
 ];
 
+export const PROBLEMS = [
+  {
+    title: "Anak terus batuk saat musim hujan",
+    desc: "Setelah sembuh, batuk balik lagi dan mengganggu tidur seluruh keluarga.",
+  },
+  {
+    title: "Tenggorokan terasa serak tiap hari",
+    desc: "Berjam‑jam di jalan, terpapar asap kendaraan dan debu, membuat pernapasan tidak nyaman.",
+  },
+  {
+    title: "Kelelahan berulang pada sore",
+    desc: "Jadwal padat membuat badan cepat lelah, terasa lemah dan susah fokus.",
+  },
+  {
+    title: "Mau hindari obat kimia",
+    desc: "Mencari alternatif alami yang simpel untuk menjaga kesehatan keluarga.",
+  },
+];
+
 export const PERSONAS = [
   {
-    title: "Ingin stamina lebih stabil",
-    desc: "Jadwal padat, badan gampang drop di sore hari.",
-    icon: "⚡",
+    title: "Butuh stamina stabil",
+    desc: "Jadwal padat bikin badan cepat lelah di sore hari.",
+    icon: "Leaf",
   },
   {
-    title: "Sering di jalan & luar ruangan",
-    desc: "Commuter, pekerja lapangan, sering bepergian.",
-    icon: "🛵",
+    title: "Sering di luar & jalan",
+    desc: "Commuter, pekerja lapangan, suka bepergian.",
+    icon: "Truck",
   },
   {
-    title: "Anak rentan batuk-pilek",
-    desc: "Terutama saat pergantian musim dan musim hujan.",
-    icon: "🧒",
+    title: "Anak mudah batuk",
+    desc: "Muncul saat musim hujan atau perubahan cuaca.",
+    icon: "Kid",
   },
   {
     title: "Terpapar polusi tiap hari",
-    desc: "Tinggal atau bekerja di kota dengan udara buruk.",
-    icon: "🏙️",
+    desc: "Tinggal atau kerja di kota dengan udara tidak bersih.",
+    icon: "City",
   },
   {
-    title: "Tenggorokan sering tidak nyaman",
-    desc: "Serak, gatal, dan batuk yang bolak-balik datang.",
-    icon: "🌬️",
+    title: "Tenggorokan tidak nyaman",
+    desc: "Serak, gatal, batuk berkepanjangan.",
+    icon: "Breath",
   },
 ];
 
