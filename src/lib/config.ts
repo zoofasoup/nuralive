@@ -7,7 +7,7 @@ export const BRAND = {
   // Nomor WA CS — ganti dengan nomor asli sebelum launch.
   whatsapp: "6281200000000",
   whatsappDisplay: "0812-0000-0000",
-  company: "PT Nura Alam Hidup",
+  company: "PT Setunggal Syifa Semesta",
   city: "Jakarta, Indonesia",
   csHours: "Senin–Sabtu, 08.00–20.00 WIB",
   // Sertifikasi: biarkan null sampai nomornya RESMI keluar.

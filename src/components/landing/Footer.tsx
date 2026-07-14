@@ -51,7 +51,10 @@ export default function Footer() {
 
       <div className="border-t border-line/70">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-ink-soft sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <p>© {new Date().getFullYear()} {BRAND.name}. Seluruh hak cipta.</p>
+          <div>
+            <p>© {new Date().getFullYear()} {BRAND.name}. Seluruh hak cipta.</p>
+            <p className="mt-1 text-ink-soft/80">Managed by Musawara Creative</p>
+          </div>
           <p>
             Suplemen kesehatan — bukan pengganti obat. Konsultasikan ke dokter
             bila keluhan berlanjut.
