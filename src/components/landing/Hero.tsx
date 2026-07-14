@@ -63,13 +63,13 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="fade-up relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-lg" style={{ animationDelay: "0.15s" }}>
+        <div className="fade-up relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl lg:scale-110 xl:scale-125 origin-bottom lg:-mb-10" style={{ animationDelay: "0.15s" }}>
           <Image
             src="/hero-dr-clean.png"
             alt="NuraLive Hero"
             width={800}
             height={800}
-            className="relative w-full h-auto drop-shadow-2xl"
+            className="relative w-full h-auto drop-shadow-2xl [-webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)] [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]"
             priority
           />
         </div>

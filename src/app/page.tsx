@@ -15,14 +15,11 @@ import Faq from "@/components/landing/Faq";
 import LeadMagnet from "@/components/landing/LeadMagnet";
 import Footer from "@/components/landing/Footer";
 import FloatingCTA from "@/components/landing/FloatingCTA";
-import { getStock, ordersThisWeek } from "@/lib/db";
-
-// Angka stok & pesanan dibaca langsung dari DB setiap request.
-export const dynamic = "force-dynamic";
+// Static mock values for urgency bar
+const stock = 120;
+const weekly = 85;
 
 export default function Home() {
-  const stock = getStock();
-  const weekly = ordersThisWeek();
 
   return (
     <>

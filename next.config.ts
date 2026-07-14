@@ -1,8 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // better-sqlite3 adalah native module — jangan di-bundle oleh Turbopack.
-  serverExternalPackages: ["better-sqlite3"],
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
+  devIndicators: {
+    appIsrStatus: false,
+    buildActivity: false,
+  },
 };
 
 export default nextConfig;

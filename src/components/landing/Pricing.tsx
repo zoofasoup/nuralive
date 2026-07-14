@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PACKAGES, formatRupiah } from "@/lib/config";
+import { PACKAGES, formatRupiah, waLink } from "@/lib/config";
 
 export default function Pricing() {
   return (
@@ -75,16 +75,18 @@ export default function Pricing() {
                   )}
                 </ul>
 
-                <Link
-                  href={`/checkout?paket=${p.id}`}
-                  className={`mt-7 rounded-full py-3.5 text-center text-sm font-bold transition ${
+                <a
+                  href={waLink(`Halo NuraLive, saya mau pesan ${p.label}`)}
+                  target="_blank"
+                  rel="noopener"
+                  className={`mt-7 block rounded-full py-3.5 text-center text-sm font-bold transition ${
                     highlight
                       ? "bg-leaf text-white shadow-lg shadow-leaf/25 hover:bg-leaf-deep"
                       : "border-2 border-leaf/40 text-leaf hover:border-leaf hover:bg-paper"
                   }`}
                 >
-                  Pilih {p.label}
-                </Link>
+                  Pesan {p.label}
+                </a>
               </div>
             );
           })}

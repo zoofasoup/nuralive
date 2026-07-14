@@ -24,8 +24,6 @@ export default function Footer() {
           <p className="text-xs font-bold tracking-widest text-ink uppercase">Belanja</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             <li><Link href="/#paket" className="text-ink-soft hover:text-leaf">Paket &amp; Harga</Link></li>
-            <li><Link href="/checkout" className="text-ink-soft hover:text-leaf">Checkout</Link></li>
-            <li><Link href="/lacak" className="text-ink-soft hover:text-leaf">Lacak Pesanan</Link></li>
             <li><Link href="/#faq" className="text-ink-soft hover:text-leaf">FAQ</Link></li>
           </ul>
         </div>
