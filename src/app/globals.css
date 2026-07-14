@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  /* NuraLive design tokens — "apotek alam yang hangat" */
+  --cream: #f7f4ec;
+  --cream-deep: #efeadd;
+  --ink: #1f2a1b;
+  --ink-soft: #55604c;
+  --leaf: #2e5b28;
+  --leaf-deep: #21451d;
+  --leaf-bright: #3d7a35;
+  --honey: #c98a1b;
+  --honey-deep: #a86f0e;
+  --honey-pale: #f6e8c8;
+  --line: #ded8c6;
+  --white: #fffdf8;
+  --danger: #b04a32;
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-leaf: var(--leaf);
+  --color-leaf-deep: var(--leaf-deep);
+  --color-leaf-bright: var(--leaf-bright);
+  --color-honey: var(--honey);
+  --color-honey-deep: var(--honey-deep);
+  --color-honey-pale: var(--honey-pale);
+  --color-line: var(--line);
+  --color-paper: var(--white);
+  --color-danger: var(--danger);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-jakarta);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+
+::selection {
+  background: var(--honey-pale);
+  color: var(--leaf-deep);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-up {
+    animation: fadeUp 0.7s ease-out both;
+  }
+}
