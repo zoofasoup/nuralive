@@ -56,9 +56,11 @@ export default function Pricing() {
                     hemat {formatRupiah(p.compareAt - p.price)}
                   </span>
                 </p>
-                <p className="text-xs text-ink-soft">
-                  ≈ {formatRupiah(Math.round(p.price / p.bottles))}/botol
-                </p>
+                <div className="mt-3">
+                  <span className="inline-block rounded-md bg-honey/20 px-3 py-1 text-sm font-bold text-honey-deep">
+                    ≈ {formatRupiah(Math.round(p.price / p.bottles))} / botol
+                  </span>
+                </div>
 
                 <ul className="mt-5 flex-1 space-y-2.5">
                   {p.perks.map((perk) => (
