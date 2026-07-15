@@ -10,7 +10,7 @@ export default function Testimonials() {
         Kata mereka
       </p>
       <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-ink sm:text-4xl">
-        Cerita dari dapur & meja kerja pelanggan kami
+        Cerita nyata dari keluarga yang sudah beralih ke NurAlive
       </h2>
 
       {heroTestimonial && (
