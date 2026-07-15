@@ -28,7 +28,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
               href="#paket"
-              className="rounded-lg bg-gradient-to-b from-leaf to-leaf-deep px-8 py-4 text-base font-bold text-white shadow-md transition hover:from-leaf-deep hover:to-leaf-deep"
+              className="rounded-lg bg-gradient-to-r from-leaf to-leaf-deep px-8 py-4 text-base font-bold text-white shadow-md transition hover:from-leaf-deep hover:to-leaf-deep"
             >
               Beli Sekarang
             </Link>

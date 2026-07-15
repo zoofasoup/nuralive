@@ -63,7 +63,7 @@ export default function LeadMagnet() {
             <button
               type="submit"
               disabled={state === "loading"}
-              className="rounded-full bg-gradient-to-b from-honey to-honey-deep px-7 py-3.5 text-sm font-bold text-ink transition hover:from-honey-deep hover:to-honey-deep disabled:opacity-60"
+              className="rounded-full bg-gradient-to-r from-honey to-honey-deep px-7 py-3.5 text-sm font-bold text-ink transition hover:from-honey-deep hover:to-honey-deep disabled:opacity-60"
             >
               {state === "loading" ? "Mengirim…" : "Kirim E-book"}
             </button>

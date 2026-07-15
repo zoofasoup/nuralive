@@ -32,8 +32,8 @@ export default function Pricing() {
                   <span
                     className={`absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-md px-4 py-1 text-xs font-bold whitespace-nowrap ${
                       highlight
-                        ? "bg-gradient-to-b from-leaf to-leaf-deep text-white"
-                        : "bg-gradient-to-b from-honey to-honey-deep text-ink"
+                        ? "bg-gradient-to-r from-leaf to-leaf-deep text-white"
+                        : "bg-gradient-to-r from-honey to-honey-deep text-ink"
                     }`}
                   >
                     {p.badge}
@@ -81,7 +81,7 @@ export default function Pricing() {
                   rel="noopener"
                   className={`mt-7 block rounded-lg py-3.5 text-center text-sm font-bold transition ${
                     highlight
-                      ? "bg-gradient-to-b from-leaf to-leaf-deep text-white shadow-md hover:from-leaf-deep hover:to-leaf-deep"
+                      ? "bg-gradient-to-r from-leaf to-leaf-deep text-white shadow-md hover:from-leaf-deep hover:to-leaf-deep"
                       : "bg-paper text-ink border border-line hover:border-leaf"
                   }`}
                 >

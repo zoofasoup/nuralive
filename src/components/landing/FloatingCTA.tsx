@@ -37,7 +37,7 @@ export default function FloatingCTA() {
       >
         <Link
           href="/#paket"
-          className="block rounded-full bg-gradient-to-b from-leaf to-leaf-deep py-3.5 text-center text-sm font-bold text-white shadow-lg"
+          className="block rounded-full bg-gradient-to-r from-leaf to-leaf-deep py-3.5 text-center text-sm font-bold text-white shadow-lg"
         >
           Beli Sekarang - mulai Rp 175rb
         </Link>
