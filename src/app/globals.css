@@ -55,7 +55,7 @@ body {
 
 .font-display {
   font-family: var(--font-krona-one), system-ui, sans-serif;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.08em;
 }
 
 ::selection {

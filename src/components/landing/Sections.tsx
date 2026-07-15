@@ -1,4 +1,5 @@
 import { PERSONAS, BRAND, PROBLEMS } from "@/lib/config";
+import Icon, { IconName } from "@/components/Icon";
 
 // Kumpulan section statis landing: urgency, trust, masalah, solusi,
 // komposisi, persona, perbandingan, jaminan.
@@ -32,10 +33,10 @@ export function UrgencyBar({
 }
 
 const TRUST = [
-  { icon: "Leaf", title: "100% Bahan Alami", desc: "Habbatussauda & zaitun EV, tanpa pengawet" },
-  { icon: "Truck", title: "Kirim Seluruh Indonesia", desc: "Same-day dispatch sebelum 15.00 WIB" },
-  { icon: "Cash", title: "COD Tersedia", desc: "Bayar di tempat saat paket tiba" },
-  { icon: "Chat", title: "Konsultasi Gratis", desc: `CS ahli via WhatsApp, ${BRAND.csHours}` },
+  { icon: "leaf" as IconName, title: "100% Bahan Alami", desc: "Habbatussauda & zaitun EV, tanpa pengawet" },
+  { icon: "truck" as IconName, title: "Kirim Seluruh Indonesia", desc: "Same-day dispatch sebelum 15.00 WIB" },
+  { icon: "cash" as IconName, title: "COD Tersedia", desc: "Bayar di tempat saat paket tiba" },
+  { icon: "chat" as IconName, title: "Konsultasi Gratis", desc: `CS ahli via WhatsApp, ${BRAND.csHours}` },
 ];
 
 export function TrustBar() {
@@ -44,7 +45,7 @@ export function TrustBar() {
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-8 sm:px-6 lg:grid-cols-4">
         {TRUST.map((t) => (
           <div key={t.title} className="flex items-start gap-3">
-            <span aria-hidden className="text-2xl">{t.icon}</span>
+            <Icon name={t.icon} className="h-7 w-7 text-leaf" aria-hidden />
             <div>
               <p className="text-sm font-bold text-ink">{t.title}</p>
               <p className="mt-0.5 text-xs text-ink-soft">{t.desc}</p>
@@ -169,7 +170,7 @@ export function ForWho() {
             key={p.title}
             className="flex flex-col items-center text-center p-4"
           >
-            <span aria-hidden className="text-3xl">{p.icon}</span>
+            <Icon name={p.icon as IconName} className="h-10 w-10 text-leaf mb-2" aria-hidden />
             <p className="mt-3 text-sm font-bold text-ink">{p.title}</p>
             <p className="mt-1 text-xs text-ink-soft">{p.desc}</p>
           </div>

@@ -206,27 +206,27 @@ export const PERSONAS = [
   {
     title: "Butuh stamina stabil",
     desc: "Jadwal padat bikin badan cepat lelah di sore hari.",
-    icon: "Leaf",
+    icon: "leaf",
   },
   {
     title: "Sering di luar & jalan",
     desc: "Commuter, pekerja lapangan, suka bepergian.",
-    icon: "Truck",
+    icon: "truck",
   },
   {
     title: "Anak mudah batuk",
     desc: "Muncul saat musim hujan atau perubahan cuaca.",
-    icon: "Kid",
+    icon: "kid",
   },
   {
     title: "Terpapar polusi tiap hari",
     desc: "Tinggal atau kerja di kota dengan udara tidak bersih.",
-    icon: "City",
+    icon: "city",
   },
   {
     title: "Tenggorokan tidak nyaman",
     desc: "Serak, gatal, batuk berkepanjangan.",
-    icon: "Breath",
+    icon: "breath",
   },
 ];
 
