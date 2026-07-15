@@ -34,7 +34,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/#paket"
-            className="rounded-full bg-leaf px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-leaf-deep"
+            className="rounded-full bg-gradient-to-b from-leaf to-leaf-deep px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:from-leaf-deep hover:to-leaf-deep"
           >
             Beli Sekarang
           </Link>
@@ -66,7 +66,7 @@ export default function Navbar() {
           <Link
             href="/#paket"
             onClick={() => setOpen(false)}
-            className="mt-3 block rounded-full bg-leaf px-5 py-3 text-center text-sm font-bold text-white"
+            className="mt-3 block rounded-full bg-gradient-to-b from-leaf to-leaf-deep px-5 py-3 text-center text-sm font-bold text-white"
           >
             Beli Sekarang
           </Link>
