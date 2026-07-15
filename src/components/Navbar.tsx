@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-cream/90 backdrop-blur">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" aria-label="NuraLive Home">
+        <Link href="/" aria-label="NurAlive Home">
           <Logo className="h-10 sm:h-12 w-auto" />
         </Link>
 

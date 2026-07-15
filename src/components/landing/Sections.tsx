@@ -141,7 +141,7 @@ export function Ingredients() {
           ))}
         </div>
         <p className="mt-6 text-xs text-white/60">
-          NuraLive adalah suplemen kesehatan, bukan obat, dan tidak dimaksudkan
+          NurAlive adalah suplemen kesehatan, bukan obat, dan tidak dimaksudkan
           untuk mendiagnosis atau menyembuhkan penyakit. Bila keluhan berlanjut,
           hubungi dokter.
         </p>
@@ -192,7 +192,7 @@ export function Comparison() {
     <section className="bg-cream-deep py-16 sm:py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <h2 className="font-display text-center text-3xl font-bold text-ink text-balance sm:text-4xl">
-          Kenapa keluarga memilih NuraLive?
+          Kenapa keluarga memilih NurAlive?
         </h2>
         <div className="mt-10 overflow-x-auto">
           <table className="w-full min-w-[560px] text-sm text-left">
@@ -200,7 +200,7 @@ export function Comparison() {
               <tr className="border-b border-line text-left">
                 <th className="p-4 font-semibold text-ink-soft">&nbsp;</th>
                 <th className="p-4 text-center font-display text-base font-bold text-leaf-deep">
-                  NuraLive
+                  NurAlive
                 </th>
                 <th className="p-4 text-center font-semibold text-ink-soft">
                   Sirup batuk kimia

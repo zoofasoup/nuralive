@@ -1,7 +1,7 @@
-// Konfigurasi pusat NuraLive — semua angka & kontak diubah dari sini.
+// Konfigurasi pusat NurAlive — semua angka & kontak diubah dari sini.
 
 export const BRAND = {
-  name: "NuraLive",
+  name: "NurAlive",
   tagline: "Tetes herbal untuk napas lega sekeluarga",
   domain: "nuralive.id",
   // Nomor WA CS — ganti dengan nomor asli sebelum launch.
@@ -115,7 +115,7 @@ export const PAYMENT_METHODS: PaymentMethod[] = [
 
 export const TESTIMONIALS = [
   {
-    quote: "Anak saya batuk tiap hujan turun. Setiap pagi kami tambahkan satu sendok madu ke NuraLive, dan dia tidur nyenyak lagi.",
+    quote: "Anak saya batuk tiap hujan turun. Setiap pagi kami tambahkan satu sendok madu ke NurAlive, dan dia tidur nyenyak lagi.",
     name: "Rina Andini",
     role: "Ibu dua anak, Bekasi",
     segment: "anak",
@@ -167,7 +167,7 @@ export const FAQS = [
   },
   {
     q: "Boleh diminum bersama obat dokter?",
-    a: "NuraLive adalah suplemen herbal, bukan pengganti obat. Beri jarak 1–2 jam dari obat dokter, dan konsultasikan ke dokter bila Anda dalam pengobatan rutin.",
+    a: "NurAlive adalah suplemen herbal, bukan pengganti obat. Beri jarak 1–2 jam dari obat dokter, dan konsultasikan ke dokter bila Anda dalam pengobatan rutin.",
   },
   {
     q: "Apakah ada efek samping?",

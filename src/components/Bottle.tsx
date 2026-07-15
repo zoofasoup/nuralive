@@ -6,7 +6,7 @@ export default function Bottle({ className = "" }: { className?: string }) {
       viewBox="0 0 200 340"
       className={className}
       role="img"
-      aria-label="Botol tetes NuraLive 30 ml"
+      aria-label="Botol tetes NurAlive 30 ml"
     >
       <defs>
         <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
@@ -64,7 +64,7 @@ export default function Bottle({ className = "" }: { className?: string }) {
         fontSize="16"
         fill="#21451d"
       >
-        NuraLive
+        NurAlive
       </text>
       <text
         x="100"

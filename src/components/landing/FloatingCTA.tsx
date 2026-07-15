@@ -19,7 +19,7 @@ export default function FloatingCTA() {
   return (
     <>
       <a
-        href={waLink("Halo NuraLive, saya mau tanya tentang produknya.")}
+        href={waLink("Halo NurAlive, saya mau tanya tentang produknya.")}
         target="_blank"
         rel="noopener"
         aria-label="Chat WhatsApp"

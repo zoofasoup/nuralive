@@ -45,7 +45,7 @@ export default function Hero() {
               <span aria-hidden className="text-honey">★★★★★</span> disukai keluarga Indonesia
             </span>
             <a
-              href={waLink("Halo NuraLive, saya mau tanya dulu sebelum order.")}
+              href={waLink("Halo NurAlive, saya mau tanya dulu sebelum order.")}
               className="font-semibold text-leaf underline underline-offset-4"
               target="_blank"
               rel="noopener"
@@ -58,7 +58,7 @@ export default function Hero() {
         <div className="fade-up relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl lg:scale-110 xl:scale-125 origin-bottom lg:-mb-10" style={{ animationDelay: "0.15s" }}>
           <Image
             src="/hero-dr-clean.png"
-            alt="NuraLive Hero"
+            alt="NurAlive Hero"
             width={800}
             height={800}
             className="relative w-full h-auto drop-shadow-2xl [-webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)] [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]"

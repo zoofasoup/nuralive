@@ -76,7 +76,7 @@ export default function Pricing() {
                 </ul>
 
                 <a
-                  href={waLink(`Halo NuraLive, saya mau pesan ${p.label}`)}
+                  href={waLink(`Halo NurAlive, saya mau pesan ${p.label}`)}
                   target="_blank"
                   rel="noopener"
                   className={`mt-7 block rounded-lg py-3.5 text-center text-sm font-bold transition ${

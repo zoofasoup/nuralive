@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="border-t border-line bg-cream-deep">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
-          <Link href="/" aria-label="NuraLive Home" className="inline-block">
+          <Link href="/" aria-label="NurAlive Home" className="inline-block">
             <Logo className="h-12 sm:h-14 w-auto" />
           </Link>
           <p className="mt-3 max-w-sm text-sm text-ink-soft">
@@ -33,7 +33,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm">
             <li>
               <a
-                href={waLink("Halo NuraLive, saya butuh bantuan.")}
+                href={waLink("Halo NurAlive, saya butuh bantuan.")}
                 target="_blank"
                 rel="noopener"
                 className="text-ink-soft hover:text-leaf"
