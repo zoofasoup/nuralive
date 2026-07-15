@@ -116,20 +116,23 @@ export function Ingredients() {
           Komposisi
         </p>
         <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-white sm:text-4xl">
-           Hanya dua bahan utama: minyak habbatussauda yang kaya thymoquinone dan minyak zaitun extra‑virgin. Kedua bahan ini sudah dipakai secara tradisional sejak ribuan tahun, tanpa tambahan bahan kimia.
+          Kebaikan murni dari alam
         </h2>
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/90">
+           Hanya dua bahan utama: minyak habbatussauda yang kaya thymoquinone dan minyak zaitun extra‑virgin. Kedua bahan ini sudah dipakai secara tradisional sejak ribuan tahun, tanpa tambahan bahan kimia.
+        </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {INGREDIENTS.map((ing) => (
             <div key={ing.name} className="rounded-xl bg-white/5 p-8 border border-white/10">
               <span aria-hidden className="text-3xl">{ing.emoji}</span>
-              <h3 className="font-display mt-3 text-2xl font-bold text-leaf-deep">
+              <h3 className="font-display mt-4 text-xl font-bold text-white">
                 {ing.name}
               </h3>
-              <p className="mt-0.5 text-sm italic text-ink-soft">{ing.sub}</p>
-              <ul className="mt-4 space-y-2">
+              <p className="mt-1 text-sm italic text-white/70">{ing.sub}</p>
+              <ul className="mt-5 space-y-3">
                 {ing.points.map((pt) => (
-                  <li key={pt} className="flex gap-2.5 text-sm text-ink">
-                    <span aria-hidden className="mt-0.5 font-bold text-honey-deep">✓</span>
+                  <li key={pt} className="flex gap-2.5 text-sm text-white/90">
+                    <span aria-hidden className="mt-0.5 font-bold text-honey">✓</span>
                     {pt}
                   </li>
                 ))}
