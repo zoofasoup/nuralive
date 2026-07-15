@@ -1,15 +1,15 @@
-// Konfigurasi pusat NurAlive — semua angka & kontak diubah dari sini.
+// Konfigurasi pusat NurAlive - semua angka & kontak diubah dari sini.
 
 export const BRAND = {
   name: "NurAlive",
   tagline: "Tetes herbal untuk napas lega sekeluarga",
   domain: "nuralive.id",
-  // Nomor WA CS — ganti dengan nomor asli sebelum launch.
+  // Nomor WA CS - ganti dengan nomor asli sebelum launch.
   whatsapp: "6281200000000",
   whatsappDisplay: "0812-0000-0000",
   company: "PT Setunggal Syifa Semesta",
   city: "Jakarta, Indonesia",
-  csHours: "Senin–Sabtu, 08.00–20.00 WIB",
+  csHours: "Senin-Sabtu, 08.00-20.00 WIB",
   // Sertifikasi: biarkan null sampai nomornya RESMI keluar.
   // Selama null, badge/section sertifikasi tidak dirender sama sekali
   // (pelajaran dari Habi yang menampilkan "POM TR XXX XXX XXX").
@@ -50,7 +50,7 @@ export const PACKAGES: Pkg[] = [
     price: 465_000,
     compareAt: 525_000,
     perks: [
-      "3 botol 30 ml — stok sebulan",
+      "3 botol 30 ml - stok sebulan",
       "Gratis e-book resep sehat keluarga",
       "Prioritas konsultasi WA",
     ],
@@ -65,7 +65,7 @@ export const PACKAGES: Pkg[] = [
     price: 870_000,
     compareAt: 1_050_000,
     perks: [
-      "6 botol 30 ml — stok 2 bulan",
+      "6 botol 30 ml - stok 2 bulan",
       "Gratis ongkir seluruh Indonesia",
       "E-book + konsultasi prioritas",
     ],
@@ -75,13 +75,13 @@ export const PACKAGES: Pkg[] = [
 
 // Order bump di checkout: tambahan 1 botol dengan potongan.
 export const ORDER_BUMP = {
-  label: "Tambah 1 botol lagi — diskon 20%",
+  label: "Tambah 1 botol lagi - diskon 20%",
   detail: "Buat cadangan di tas atau dibagikan ke orang tua.",
   price: 140_000,
 };
 
 // Zona ongkir sederhana (flat per zona). Ganti dengan API Biteship/RajaOngkir
-// saat volume naik — struktur data sudah kompatibel.
+// saat volume naik - struktur data sudah kompatibel.
 export type ShippingZone = { id: string; label: string; cost: number };
 export const SHIPPING_ZONES: ShippingZone[] = [
   { id: "jabodetabek", label: "Jabodetabek", cost: 12_000 },
@@ -108,7 +108,7 @@ export const PAYMENT_METHODS: PaymentMethod[] = [
   },
   {
     id: "cod",
-    label: "COD — Bayar di Tempat",
+    label: "COD - Bayar di Tempat",
     note: "Bayar tunai ke kurir saat paket tiba",
   },
 ];
@@ -155,31 +155,31 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     q: "Berapa lama efeknya mulai terasa?",
-    a: "Setiap orang berbeda. Umumnya rasa nyaman di tenggorokan terasa dalam beberapa hari pertama pemakaian rutin. Untuk memelihara daya tahan tubuh, disarankan konsumsi konsisten minimal 2–4 minggu.",
+    a: "Setiap orang berbeda. Umumnya rasa nyaman di tenggorokan terasa dalam beberapa hari pertama pemakaian rutin. Untuk memelihara daya tahan tubuh, disarankan konsumsi konsisten minimal 2-4 minggu.",
   },
   {
     q: "Aman untuk anak usia berapa?",
-    a: "Direkomendasikan untuk anak usia 2 tahun ke atas: 2–3 tetes, 2× sehari, dicampur satu sendok madu murni atau air hangat. Untuk anak di bawah 2 tahun, konsultasikan dulu ke dokter.",
+    a: "Direkomendasikan untuk anak usia 2 tahun ke atas: 2-3 tetes, 2× sehari, dicampur satu sendok madu murni atau air hangat. Untuk anak di bawah 2 tahun, konsultasikan dulu ke dokter.",
   },
   {
     q: "Bagaimana cara konsumsinya?",
-    a: "Dewasa: 5–10 tetes, 2–3× sehari, langsung diteteskan ke mulut atau dicampur madu/air hangat. Diminum setelah makan. Kocok botol sebelum digunakan.",
+    a: "Dewasa: 5-10 tetes, 2-3× sehari, langsung diteteskan ke mulut atau dicampur madu/air hangat. Diminum setelah makan. Kocok botol sebelum digunakan.",
   },
   {
     q: "Boleh diminum bersama obat dokter?",
-    a: "NurAlive adalah suplemen herbal, bukan pengganti obat. Beri jarak 1–2 jam dari obat dokter, dan konsultasikan ke dokter bila Anda dalam pengobatan rutin.",
+    a: "NurAlive adalah suplemen herbal, bukan pengganti obat. Beri jarak 1-2 jam dari obat dokter, dan konsultasikan ke dokter bila Anda dalam pengobatan rutin.",
   },
   {
     q: "Apakah ada efek samping?",
-    a: "Terbuat dari bahan alami. Rasa minyak habbatussauda memang khas dan cukup kuat di awal — mencampurnya dengan madu murni membuatnya jauh lebih nyaman. Hentikan pemakaian bila muncul reaksi alergi.",
+    a: "Terbuat dari bahan alami. Rasa minyak habbatussauda memang khas dan cukup kuat di awal - mencampurnya dengan madu murni membuatnya jauh lebih nyaman. Hentikan pemakaian bila muncul reaksi alergi.",
   },
   {
     q: "Bagaimana pengiriman dan COD?",
-    a: "Pesanan sebelum pukul 15.00 WIB dikirim di hari yang sama (Senin–Sabtu). COD tersedia di semua area jangkauan kurir. Nomor resi dikirim via WhatsApp.",
+    a: "Pesanan sebelum pukul 15.00 WIB dikirim di hari yang sama (Senin-Sabtu). COD tersedia di semua area jangkauan kurir. Nomor resi dikirim via WhatsApp.",
   },
   {
     q: "Ada garansi kalau paket rusak?",
-    a: "Ada. Kalau botol pecah atau paket tidak sesuai, foto dan kirim ke WhatsApp CS kami dalam 1×24 jam setelah diterima — kami ganti tanpa ribet.",
+    a: "Ada. Kalau botol pecah atau paket tidak sesuai, foto dan kirim ke WhatsApp CS kami dalam 1×24 jam setelah diterima - kami ganti tanpa ribet.",
   },
 ];
 

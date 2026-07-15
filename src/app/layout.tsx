@@ -19,13 +19,13 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${BRAND.domain}`),
   title: {
-    default: `${BRAND.name} — Tetes Herbal Habbatussauda & Zaitun untuk Keluarga`,
-    template: `%s — ${BRAND.name}`,
+    default: `${BRAND.name} - Tetes Herbal Habbatussauda & Zaitun untuk Keluarga`,
+    template: `%s - ${BRAND.name}`,
   },
   description:
     "Suplemen tetes herbal berbasis minyak habbatussauda dan zaitun extra virgin. Membantu meredakan batuk dan memelihara daya tahan tubuh sekeluarga. Kirim seluruh Indonesia, COD tersedia.",
   openGraph: {
-    title: `${BRAND.name} — Tetes Herbal untuk Napas Lega Sekeluarga`,
+    title: `${BRAND.name} - Tetes Herbal untuk Napas Lega Sekeluarga`,
     description:
       "Membantu meredakan batuk & memelihara daya tahan tubuh. Habbatussauda + zaitun extra virgin.",
     locale: "id_ID",

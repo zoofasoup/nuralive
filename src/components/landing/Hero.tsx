@@ -21,7 +21,7 @@ export default function Hero() {
 
           <p className="mt-5 max-w-xl text-lg text-ink-soft">
             Tetes herbal minyak <strong>habbatussauda</strong> &amp;{" "}
-            <strong>zaitun extra virgin</strong> — membantu meredakan batuk dan
+            <strong>zaitun extra virgin</strong> - membantu meredakan batuk dan
             memelihara daya tahan tubuh, dari anak 2 tahun sampai kakek-nenek.
           </p>
 

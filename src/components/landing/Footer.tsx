@@ -11,7 +11,7 @@ export default function Footer() {
             <Logo className="h-12 sm:h-14 w-auto" />
           </Link>
           <p className="mt-3 max-w-sm text-sm text-ink-soft">
-            Tetes herbal minyak habbatussauda &amp; zaitun extra virgin —
+            Tetes herbal minyak habbatussauda &amp; zaitun extra virgin -
             membantu meredakan batuk dan memelihara daya tahan tubuh keluarga
             Indonesia.
           </p>
@@ -56,7 +56,7 @@ export default function Footer() {
             <p className="mt-1 text-ink-soft/80">Managed by Musawara Creative</p>
           </div>
           <p>
-            Suplemen kesehatan — bukan pengganti obat. Konsultasikan ke dokter
+            Suplemen kesehatan - bukan pengganti obat. Konsultasikan ke dokter
             bila keluhan berlanjut.
           </p>
         </div>

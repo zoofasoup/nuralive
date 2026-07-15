@@ -39,7 +39,7 @@ export default function FloatingCTA() {
           href="/#paket"
           className="block rounded-full bg-leaf py-3.5 text-center text-sm font-bold text-white shadow-lg"
         >
-          Beli Sekarang — mulai Rp 175rb
+          Beli Sekarang - mulai Rp 175rb
         </Link>
       </div>
     </>

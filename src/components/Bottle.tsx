@@ -1,4 +1,4 @@
-// Ilustrasi botol tetes 30ml — placeholder sampai foto produk asli siap.
+// Ilustrasi botol tetes 30ml - placeholder sampai foto produk asli siap.
 // Dibuat SVG supaya tajam di semua ukuran dan nol byte gambar eksternal.
 export default function Bottle({ className = "" }: { className?: string }) {
   return (

@@ -34,7 +34,7 @@ export default function LeadMagnet() {
           Belum siap order? Ambil dulu e-book gratisnya
         </h2>
         <p className="mt-3 text-white/80">
-          “Rumah Bebas Batuk” — panduan praktis menjaga pernapasan keluarga di
+          “Rumah Bebas Batuk” - panduan praktis menjaga pernapasan keluarga di
           musim hujan &amp; kota berpolusi. Kami kirim lewat WhatsApp.
         </p>
 
@@ -71,7 +71,7 @@ export default function LeadMagnet() {
         )}
         {state === "error" && (
           <p className="mt-3 text-sm text-honey">
-            Nomor belum valid — cek lagi ya (contoh: 081234567890).
+            Nomor belum valid - cek lagi ya (contoh: 081234567890).
           </p>
         )}
         <p className="mt-4 text-xs text-white/50">

@@ -11,7 +11,7 @@ export function UrgencyBar({
   stock: number;
   weeklyOrders: number;
 }) {
-  // Angka di bar ini NYATA dari database — bukan counter animasi.
+  // Angka di bar ini NYATA dari database - bukan counter animasi.
   const items: string[] = [];
   if (weeklyOrders > 0) items.push(`${weeklyOrders} pesanan minggu ini`);
   else items.push("Batch perdana sudah dibuka");
@@ -89,7 +89,7 @@ export function Problem() {
 const INGREDIENTS = [
   {
     name: "Minyak Habbatussauda",
-    sub: "Nigella sativa — jintan hitam",
+    sub: "Nigella sativa - jintan hitam",
     points: [
       "Mengandung senyawa aktif thymoquinone",
       "Dikenal lama dalam tradisi herbal untuk daya tahan tubuh",
@@ -161,7 +161,7 @@ export function ForWho() {
         Satu botol kecil, dipakai seisi rumah
       </h2>
       <p className="mt-3 max-w-xl text-ink-soft">
-        Dari anak usia 2 tahun sampai lansia — cukup diteteskan langsung, atau
+        Dari anak usia 2 tahun sampai lansia - cukup diteteskan langsung, atau
         dicampur sesendok madu murni untuk anak-anak.
       </p>
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -182,7 +182,7 @@ export function ForWho() {
 
 const COMPARE = [
   { label: "Bahan alami tanpa tambahan kimia", nura: true, sirup: false, madu: true },
-  { label: "Praktis — tinggal tetes, tanpa takar sendok", nura: true, sirup: false, madu: false },
+  { label: "Praktis - tinggal tetes, tanpa takar sendok", nura: true, sirup: false, madu: false },
   { label: "Satu produk untuk anak 2th s.d. lansia", nura: true, sirup: false, madu: true },
   { label: "Kandungan habbatussauda + zaitun EV terstandar", nura: true, sirup: false, madu: false },
   { label: "Untuk pemeliharaan harian, bukan hanya saat sakit", nura: true, sirup: false, madu: true },
@@ -216,13 +216,13 @@ export function Comparison() {
                 <tr key={row.label} className="border-b border-line/60 last:border-0">
                   <td className="p-4 text-ink">{row.label}</td>
                   <td className="bg-leaf/5 p-4 text-center font-bold text-leaf" aria-label={row.nura ? "ya" : "tidak"}>
-                    {row.nura ? "Ya" : <span className="text-ink-soft/40">—</span>}
+                    {row.nura ? "Ya" : <span className="text-ink-soft/40">-</span>}
                   </td>
                   <td className="p-4 text-center text-ink" aria-label={row.sirup ? "ya" : "tidak"}>
-                    {row.sirup ? "Ya" : <span className="text-ink-soft/40">—</span>}
+                    {row.sirup ? "Ya" : <span className="text-ink-soft/40">-</span>}
                   </td>
                   <td className="p-4 text-center text-ink" aria-label={row.madu ? "ya" : "tidak"}>
-                    {row.madu ? "Ya" : <span className="text-ink-soft/40">—</span>}
+                    {row.madu ? "Ya" : <span className="text-ink-soft/40">-</span>}
                   </td>
                 </tr>
               ))}
@@ -253,7 +253,7 @@ export function Guarantee() {
           </h3>
           <p className="mt-2 text-sm text-ink-soft">
             Botol pecah di jalan atau paket tidak sesuai? Foto & kirim ke CS
-            dalam 1×24 jam — kami kirim penggantinya tanpa ribet.
+            dalam 1×24 jam - kami kirim penggantinya tanpa ribet.
           </p>
         </div>
         <div className="rounded-xl border border-line bg-paper p-8">
@@ -282,7 +282,7 @@ export function Guarantee() {
             </h3>
             <p className="mt-2 text-sm text-ink-soft">
               CS kami menjawab pertanyaan takaran, kondisi khusus, dan cara
-              konsumsi — tanpa harus beli dulu. {BRAND.csHours}.
+              konsumsi - tanpa harus beli dulu. {BRAND.csHours}.
             </p>
           </div>
         )}

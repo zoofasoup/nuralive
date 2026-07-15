@@ -12,7 +12,7 @@ export default function Pricing() {
           Pilih sesuai kebutuhan rumah
         </h2>
         <p className="mx-auto mt-3 max-w-lg text-center text-ink-soft">
-          Semua paket dikirim dari gudang kami — bukan dropship. Harga sudah
+          Semua paket dikirim dari gudang kami - bukan dropship. Harga sudah
           termasuk kemasan aman anti-pecah.
         </p>
 
@@ -93,7 +93,7 @@ export default function Pricing() {
         </div>
 
         <p className="mt-8 text-center text-sm text-ink-soft">
-          Bisa juga COD (bayar di tempat) — pilih saat checkout.
+          Bisa juga COD (bayar di tempat) - pilih saat checkout.
         </p>
       </div>
     </section>
