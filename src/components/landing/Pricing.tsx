@@ -33,7 +33,7 @@ export default function Pricing() {
                     className={`absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-md px-4 py-1 text-xs font-bold whitespace-nowrap ${
                       highlight
                         ? "bg-gradient-to-r from-leaf to-leaf-deep text-white"
-                        : "bg-gradient-to-r from-honey to-honey-deep text-ink"
+                        : "bg-gradient-to-r from-honey to-honey-deep text-white"
                     }`}
                   >
                     {p.badge}
