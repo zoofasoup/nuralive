@@ -5,24 +5,16 @@ import { BRAND, waLink } from "@/lib/config";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-cream-deep via-cream to-cream pt-28 pb-14 sm:pt-36">
-      {/* lingkaran dekoratif */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-honey-pale opacity-60 blur-3xl"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-leaf/10 blur-3xl"
-      />
+      {/* Minimal background tanpa elemen AI blur */}
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.2fr_1fr]">
         <div className="fade-up">
-          <p className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-1.5 text-xs font-bold tracking-widest text-leaf-deep uppercase">
-            <span className="h-1.5 w-1.5 rounded-full bg-honey" />
+          <p className="inline-flex items-center gap-2 border-b border-line bg-transparent pb-2 text-xs font-bold tracking-widest text-leaf-deep uppercase">
+            <span className="h-1.5 w-1.5 rounded-sm bg-honey" />
             100% Bahan Alami · Tanpa Pengawet
           </p>
 
-          <h1 className="font-display mt-5 text-4xl leading-[1.12] font-bold text-ink text-balance sm:text-5xl lg:text-6xl">
+          <h1 className="font-display mt-5 text-4xl leading-[1.12] font-bold text-ink sm:text-5xl lg:text-6xl">
             Napas Lega Sekeluarga,{" "}
             <span className="text-leaf">Cukup Beberapa Tetes</span> Sehari
           </h1>
@@ -36,13 +28,13 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
               href="#paket"
-              className="rounded-full bg-leaf px-8 py-4 text-base font-bold text-white shadow-lg shadow-leaf/25 transition hover:bg-leaf-deep"
+              className="rounded-lg bg-leaf px-8 py-4 text-base font-bold text-white shadow-md transition hover:bg-leaf-deep"
             >
               Beli Sekarang
             </Link>
             <Link
               href="#komposisi"
-              className="rounded-full border-2 border-leaf/30 px-8 py-4 text-base font-bold text-leaf transition hover:border-leaf hover:bg-paper"
+              className="rounded-lg border-2 border-leaf/30 px-8 py-4 text-base font-bold text-leaf transition hover:border-leaf hover:bg-paper"
             >
               Lihat Komposisi
             </Link>

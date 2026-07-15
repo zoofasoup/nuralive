@@ -8,7 +8,7 @@ export default function Pricing() {
         <p className="text-center text-xs font-bold tracking-widest text-honey-deep uppercase">
           Paket &amp; Harga
         </p>
-        <h2 className="font-display mt-2 text-center text-3xl font-bold text-ink text-balance sm:text-4xl">
+        <h2 className="font-display mt-2 text-center text-3xl font-bold text-ink sm:text-4xl">
           Pilih sesuai kebutuhan rumah
         </h2>
         <p className="mx-auto mt-3 max-w-lg text-center text-ink-soft">
@@ -22,15 +22,15 @@ export default function Pricing() {
             return (
               <div
                 key={p.id}
-                className={`relative flex flex-col rounded-3xl border p-8 ${
+                className={`relative flex flex-col rounded-xl border p-8 ${
                   highlight
-                    ? "border-leaf bg-cream shadow-xl shadow-leaf/10 lg:-translate-y-3"
+                    ? "border-leaf bg-cream shadow-md lg:-translate-y-3"
                     : "border-line bg-cream/50"
                 }`}
               >
                 {p.badge && (
                   <span
-                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-xs font-bold whitespace-nowrap ${
+                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-md px-4 py-1 text-xs font-bold whitespace-nowrap ${
                       highlight
                         ? "bg-leaf text-white"
                         : "bg-honey text-white"
@@ -79,9 +79,9 @@ export default function Pricing() {
                   href={waLink(`Halo NuraLive, saya mau pesan ${p.label}`)}
                   target="_blank"
                   rel="noopener"
-                  className={`mt-7 block rounded-full py-3.5 text-center text-sm font-bold transition ${
+                  className={`mt-7 block rounded-lg py-3.5 text-center text-sm font-bold transition ${
                     highlight
-                      ? "bg-leaf text-white shadow-lg shadow-leaf/25 hover:bg-leaf-deep"
+                      ? "bg-leaf text-white shadow-md hover:bg-leaf-deep"
                       : "border-2 border-leaf/40 text-leaf hover:border-leaf hover:bg-paper"
                   }`}
                 >

@@ -40,7 +40,7 @@ const TRUST = [
 
 export function TrustBar() {
   return (
-    <section className="border-y border-line bg-paper">
+    <section className="bg-cream-deep border-b border-line/50">
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-8 sm:px-6 lg:grid-cols-4">
         {TRUST.map((t) => (
           <div key={t.title} className="flex items-start gap-3">
@@ -64,14 +64,14 @@ export function Problem() {
       <p className="text-xs font-bold tracking-widest text-honey-deep uppercase">
         Terasa familiar?
       </p>
-      <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-ink text-balance sm:text-4xl">
+      <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-ink sm:text-4xl">
         Musim hujan, polusi, dan jadwal padat menguji daya tahan keluarga setiap hari
       </h2>
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {PROBLEMS.map((p, i) => (
           <div
             key={p.title}
-            className="rounded-2xl border border-line bg-paper p-6"
+            className="flex flex-col border-t border-line/60 pt-5"
           >
             <p className="font-display text-lg font-semibold text-leaf-deep">
               {String(i + 1).padStart(2, "0")}
@@ -115,12 +115,12 @@ export function Ingredients() {
         <p className="text-xs font-bold tracking-widest text-honey uppercase">
           Komposisi
         </p>
-        <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-white text-balance sm:text-4xl">
+        <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-white sm:text-4xl">
            Hanya dua bahan utama: minyak habbatussauda yang kaya thymoquinone dan minyak zaitun extra‑virgin. Kedua bahan ini sudah dipakai secara tradisional sejak ribuan tahun, tanpa tambahan bahan kimia.
         </h2>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {INGREDIENTS.map((ing) => (
-            <div key={ing.name} className="rounded-3xl bg-paper p-8">
+            <div key={ing.name} className="rounded-xl bg-white/5 p-8 border border-white/10">
               <span aria-hidden className="text-3xl">{ing.emoji}</span>
               <h3 className="font-display mt-3 text-2xl font-bold text-leaf-deep">
                 {ing.name}
@@ -153,7 +153,7 @@ export function ForWho() {
       <p className="text-xs font-bold tracking-widest text-honey-deep uppercase">
         Cocok untuk
       </p>
-      <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-ink text-balance sm:text-4xl">
+      <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-ink sm:text-4xl">
         Satu botol kecil, dipakai seisi rumah
       </h2>
       <p className="mt-3 max-w-xl text-ink-soft">
@@ -164,7 +164,7 @@ export function ForWho() {
         {PERSONAS.map((p) => (
           <div
             key={p.title}
-            className="rounded-2xl border border-line bg-paper p-5 text-center transition hover:border-leaf/40 hover:shadow-sm"
+            className="flex flex-col items-center text-center p-4"
           >
             <span aria-hidden className="text-3xl">{p.icon}</span>
             <p className="mt-3 text-sm font-bold text-ink">{p.title}</p>
@@ -191,8 +191,8 @@ export function Comparison() {
         <h2 className="font-display text-center text-3xl font-bold text-ink text-balance sm:text-4xl">
           Kenapa keluarga memilih NuraLive?
         </h2>
-        <div className="mt-10 overflow-x-auto rounded-2xl border border-line bg-paper">
-          <table className="w-full min-w-[560px] text-sm">
+        <div className="mt-10 overflow-x-auto">
+          <table className="w-full min-w-[560px] text-sm text-left">
             <thead>
               <tr className="border-b border-line text-left">
                 <th className="p-4 font-semibold text-ink-soft">&nbsp;</th>
@@ -211,14 +211,14 @@ export function Comparison() {
               {COMPARE.map((row) => (
                 <tr key={row.label} className="border-b border-line/60 last:border-0">
                   <td className="p-4 text-ink">{row.label}</td>
-                  <td className="bg-leaf/5 p-4 text-center text-lg" aria-label={row.nura ? "ya" : "tidak"}>
-                    {row.nura ? "✅" : "—"}
+                  <td className="bg-leaf/5 p-4 text-center font-bold text-leaf" aria-label={row.nura ? "ya" : "tidak"}>
+                    {row.nura ? "Ya" : <span className="text-ink-soft/40">—</span>}
                   </td>
-                  <td className="p-4 text-center text-lg" aria-label={row.sirup ? "ya" : "tidak"}>
-                    {row.sirup ? "✅" : "—"}
+                  <td className="p-4 text-center text-ink" aria-label={row.sirup ? "ya" : "tidak"}>
+                    {row.sirup ? "Ya" : <span className="text-ink-soft/40">—</span>}
                   </td>
-                  <td className="p-4 text-center text-lg" aria-label={row.madu ? "ya" : "tidak"}>
-                    {row.madu ? "✅" : "—"}
+                  <td className="p-4 text-center text-ink" aria-label={row.madu ? "ya" : "tidak"}>
+                    {row.madu ? "Ya" : <span className="text-ink-soft/40">—</span>}
                   </td>
                 </tr>
               ))}
@@ -242,7 +242,7 @@ export function Guarantee() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
       <div className="grid gap-6 md:grid-cols-3">
-        <div className="rounded-3xl border-2 border-honey/40 bg-honey-pale p-8">
+        <div className="rounded-xl bg-honey-pale p-8">
           <span aria-hidden className="text-3xl">🛡️</span>
           <h3 className="font-display mt-3 text-xl font-bold text-ink">
             Garansi Pecah / Rusak, Ganti Baru
@@ -252,7 +252,7 @@ export function Guarantee() {
             dalam 1×24 jam — kami kirim penggantinya tanpa ribet.
           </p>
         </div>
-        <div className="rounded-3xl border border-line bg-paper p-8">
+        <div className="rounded-xl border border-line bg-paper p-8">
           <span aria-hidden className="text-3xl">🇮🇩</span>
           <h3 className="font-display mt-3 text-xl font-bold text-ink">
             Diracik &amp; Dikemas di Indonesia
@@ -264,14 +264,14 @@ export function Guarantee() {
         </div>
         {certs.length > 0 ? (
           certs.map((c) => (
-            <div key={c.title} className="rounded-3xl border border-line bg-paper p-8">
+            <div key={c.title} className="rounded-xl border border-line bg-paper p-8">
               <span aria-hidden className="text-3xl">✅</span>
               <h3 className="font-display mt-3 text-xl font-bold text-ink">{c.title}</h3>
               <p className="mt-2 text-sm text-ink-soft">{c.desc}</p>
             </div>
           ))
         ) : (
-          <div className="rounded-3xl border border-line bg-paper p-8">
+          <div className="rounded-xl border border-line bg-paper p-8">
             <span aria-hidden className="text-3xl">💬</span>
             <h3 className="font-display mt-3 text-xl font-bold text-ink">
               Ragu? Tanya Dulu, Gratis
