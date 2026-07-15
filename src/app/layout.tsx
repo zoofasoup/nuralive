@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
+import { Krona_One, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { BRAND } from "@/lib/config";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const kronaOne = Krona_One({
+  variable: "--font-krona-one",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: "400",
 });
 
 const jakarta = Plus_Jakarta_Sans({
@@ -40,7 +40,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id" className={`${fraunces.variable} ${jakarta.variable} h-full antialiased`}>
+    <html lang="id" className={`${kronaOne.variable} ${jakarta.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         {children}
         {GA_ID && (

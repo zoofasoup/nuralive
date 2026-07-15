@@ -31,7 +31,7 @@
   --color-line: var(--line);
   --color-paper: var(--white);
   --color-danger: var(--danger);
-  --font-display: var(--font-fraunces);
+  --font-display: var(--font-krona-one);
   --font-sans: var(--font-jakarta);
 }
 
@@ -54,7 +54,7 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-fraunces), Georgia, serif;
+  font-family: var(--font-krona-one), system-ui, sans-serif;
 }
 
 ::selection {
