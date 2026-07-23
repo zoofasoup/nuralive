@@ -2,18 +2,18 @@
 
 :root {
   /* NurAlive design tokens - "apotek alam yang hangat" */
-  --cream: #f7f4ec;
-  --cream-deep: #efeadd;
-  --ink: #1f2a1b;
-  --ink-soft: #55604c;
-  --leaf: #73883e;
-  --leaf-deep: #4b5f19;
-  --leaf-bright: #3d7a35;
-  --honey: #f3da74;
-  --honey-deep: #a86f0e;
-  --honey-pale: #f6e8c8;
-  --line: #ded8c6;
-  --white: #fffdf8;
+  --cream: #ebf5d5;
+  --cream-deep: #dcedb4;
+  --ink: #254215;
+  --ink-soft: #4c6b3b;
+  --leaf: #4a8137;
+  --leaf-deep: #325e22;
+  --leaf-bright: #5fa845;
+  --honey: #d6af51;
+  --honey-deep: #a8842d;
+  --honey-pale: #f1dfa3;
+  --line: #c8d9a7;
+  --white: #ffffff;
   --danger: #b04a32;
 }
 
