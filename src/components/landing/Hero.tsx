@@ -55,7 +55,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="fade-up relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl lg:scale-110 xl:scale-125 origin-bottom lg:-mb-10" style={{ animationDelay: "0.15s" }}>
+        <div className="fade-scale relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl lg:scale-110 xl:scale-125 origin-bottom lg:-mb-10" style={{ animationDelay: "0.15s" }}>
           <Image
             src="/product-hero.png"
             alt="NurAlive Product"
