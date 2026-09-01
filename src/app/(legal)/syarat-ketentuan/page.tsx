@@ -22,9 +22,9 @@ export default function SyaratPage() {
 
       <h2>Pemesanan &amp; Pembayaran</h2>
       <ul>
-        <li>Pesanan dianggap sah setelah pembayaran terverifikasi (untuk transfer/QRIS) atau setelah konfirmasi CS (untuk COD).</li>
-        <li>Harga yang berlaku adalah harga saat pesanan dibuat.</li>
-        <li>Kami berhak membatalkan pesanan yang terindikasi penyalahgunaan atau kesalahan sistem, dengan pengembalian dana penuh bila sudah dibayar.</li>
+        <li>{BRAND.domain} adalah etalase produk - pemesanan dan pembayaran diselesaikan langsung di Shopee, Tokopedia, atau website mitra kami, mengikuti syarat &amp; ketentuan masing-masing platform tersebut.</li>
+        <li>Pemesanan lewat chat WhatsApp dianggap sah setelah dikonfirmasi oleh CS kami.</li>
+        <li>Harga yang tertera di {BRAND.domain} bersifat indikatif; harga final mengikuti yang tertera di platform tempat kamu membeli.</li>
       </ul>
 
       <h2>Kekayaan Intelektual</h2>

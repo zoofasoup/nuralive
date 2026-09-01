@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { PACKAGES, formatRupiah, waLink } from "@/lib/config";
+import { PACKAGES, formatRupiah } from "@/lib/config";
+import ChannelButtons from "@/components/ChannelButtons";
 
 export default function Pricing() {
   return (
@@ -77,25 +77,18 @@ export default function Pricing() {
                   )}
                 </ul>
 
-                <a
-                  href={waLink(`Halo NurAlive, saya mau pesan ${p.label}`)}
-                  target="_blank"
-                  rel="noopener"
-                  className={`mt-7 block rounded-lg py-3.5 text-center text-sm font-bold transition ${
-                    highlight
-                      ? "bg-gradient-to-r from-leaf to-leaf-deep text-white shadow-md hover:from-leaf-deep hover:to-leaf-deep"
-                      : "bg-paper text-ink border border-line hover:border-leaf"
-                  }`}
-                >
-                  Pesan {p.label}
-                </a>
+                <p className="mt-7 text-center text-xs font-bold tracking-wide text-ink-soft uppercase">
+                  Beli {p.label} di
+                </p>
+                <ChannelButtons context={p.label} className="mt-2.5" />
               </div>
             );
           })}
         </div>
 
         <p className="mt-8 text-center text-sm text-ink-soft">
-          Bisa juga COD (bayar di tempat) - pilih saat checkout.
+          COD (bayar di tempat) tersedia langsung di Shopee &amp; Tokopedia,
+          atau tanya dulu via WhatsApp.
         </p>
       </div>
     </section>

@@ -4,9 +4,8 @@ export const BRAND = {
   name: "NurAlive",
   tagline: "Tetes herbal untuk napas lega sekeluarga",
   domain: "nuralive.id",
-  // Nomor WA CS - ganti dengan nomor asli sebelum launch.
-  whatsapp: "6281200000000",
-  whatsappDisplay: "0812-0000-0000",
+  whatsapp: "6285139372490",
+  whatsappDisplay: "0851-3937-2490",
   company: "PT Setunggal Syifa Semesta",
   city: "Jakarta, Indonesia",
   csHours: "Senin-Sabtu, 08.00-20.00 WIB",
@@ -51,7 +50,7 @@ export const PACKAGES: Pkg[] = [
     compareAt: 525_000,
     perks: [
       "3 botol 30 ml - stok sebulan",
-      "Gratis e-book resep sehat keluarga",
+      "Panduan takaran lengkap sekeluarga",
       "Prioritas konsultasi WA",
     ],
     freeShipping: false,
@@ -67,49 +66,30 @@ export const PACKAGES: Pkg[] = [
     perks: [
       "6 botol 30 ml - stok 2 bulan",
       "Gratis ongkir seluruh Indonesia",
-      "E-book + konsultasi prioritas",
+      "Konsultasi prioritas via WA",
     ],
     freeShipping: true,
   },
 ];
 
-// Order bump di checkout: tambahan 1 botol dengan potongan.
-export const ORDER_BUMP = {
-  label: "Tambah 1 botol lagi - diskon 20%",
-  detail: "Buat cadangan di tas atau dibagikan ke orang tua.",
-  price: 140_000,
-};
-
-// Zona ongkir sederhana (flat per zona). Ganti dengan API Biteship/RajaOngkir
-// saat volume naik - struktur data sudah kompatibel.
-export type ShippingZone = { id: string; label: string; cost: number };
-export const SHIPPING_ZONES: ShippingZone[] = [
-  { id: "jabodetabek", label: "Jabodetabek", cost: 12_000 },
-  { id: "jawa", label: "Pulau Jawa (luar Jabodetabek)", cost: 18_000 },
-  { id: "sumatera-bali", label: "Sumatera / Bali / NTB", cost: 28_000 },
-  { id: "kalimantan-sulawesi", label: "Kalimantan / Sulawesi", cost: 35_000 },
-  { id: "timur", label: "NTT / Maluku / Papua", cost: 48_000 },
-];
-
-// Gratis ongkir otomatis di atas nominal ini (selain paket freeShipping).
-export const FREE_SHIPPING_MIN = 500_000;
-
-export type PaymentMethod = { id: string; label: string; note: string };
-export const PAYMENT_METHODS: PaymentMethod[] = [
+// Kanal beli eksternal - situs ini adalah hub, transaksi selesai di
+// masing-masing platform (bukan checkout internal).
+export type SalesChannel = { id: "shopee" | "tokopedia" | "website"; label: string; url: string };
+export const SALES_CHANNELS: SalesChannel[] = [
   {
-    id: "transfer",
-    label: "Transfer Bank (BCA)",
-    note: "Nomor rekening dikirim di halaman konfirmasi",
+    id: "shopee",
+    label: "Shopee",
+    url: "https://shopee.co.id/NurAlive-Herbal-Alam-Habbatussauda-Black-Seed-Oil-Membantu-Daya-Tahan-Tubuh-Meredakan-Batuk-i.1891772998.53015047353?extraParams={%22display_model_id%22%3A406291758313%2C%22model_selection_logic%22%3A3}",
   },
   {
-    id: "qris",
-    label: "QRIS (semua e-wallet & m-banking)",
-    note: "Scan kode QR di halaman konfirmasi",
+    id: "tokopedia",
+    label: "Tokopedia",
+    url: "https://tk.tokopedia.com/ZSVcyWtCx/",
   },
   {
-    id: "cod",
-    label: "COD - Bayar di Tempat",
-    note: "Bayar tunai ke kurir saat paket tiba",
+    id: "website",
+    label: "Website Kami",
+    url: "https://nuralive.jubelio.store/products/nuralive-herbal-alam-habbatussauda-black-seed-oil-membantu-daya-tahan-tubuh-meredakan-batuk",
   },
 ];
 

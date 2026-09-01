@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { BRAND, waLink } from "@/lib/config";
 
 export default function Hero() {
@@ -28,13 +27,13 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
               href="#paket"
-              className="rounded-lg bg-gradient-to-r from-leaf to-leaf-deep px-8 py-4 text-base font-bold text-white shadow-md transition hover:from-leaf-deep hover:to-leaf-deep"
+              className="rounded-lg bg-gradient-to-r from-leaf to-leaf-deep px-8 py-4 text-base font-bold text-white shadow-md transition hover:from-leaf-deep hover:to-leaf-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-leaf-deep"
             >
               Beli Sekarang
             </Link>
             <Link
               href="#komposisi"
-              className="rounded-lg border-2 border-leaf/30 px-8 py-4 text-base font-bold text-leaf transition hover:border-leaf hover:bg-paper"
+              className="rounded-lg border-2 border-leaf/30 px-8 py-4 text-base font-bold text-leaf transition hover:border-leaf hover:bg-paper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-leaf-deep"
             >
               Lihat Komposisi
             </Link>
@@ -46,7 +45,7 @@ export default function Hero() {
             </span>
             <a
               href={waLink("Halo NurAlive, saya mau tanya dulu sebelum order.")}
-              className="font-semibold text-leaf underline underline-offset-4"
+              className="font-semibold text-leaf-deep underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-leaf-deep"
               target="_blank"
               rel="noopener"
             >
@@ -56,13 +55,18 @@ export default function Hero() {
         </div>
 
         <div className="fade-scale relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl lg:scale-110 xl:scale-125 origin-bottom lg:-mb-10" style={{ animationDelay: "0.15s" }}>
-          <Image
+          {/* Plain <img> with a hand-built srcset: next/image can't generate
+              real responsive variants here since output:"export" forces
+              images.unoptimized, which drops srcset entirely. */}
+          <img
             src="/product-hero.png"
-            alt="NurAlive Product"
+            srcSet="/product-hero-480.png 480w, /product-hero.png 800w"
+            sizes="(max-width: 639px) 480px, 800px"
+            alt="Kemasan dan botol NurAlive, tetes herbal habbatussauda dan zaitun extra virgin"
             width={800}
-            height={800}
+            height={533}
             className="relative w-full h-auto drop-shadow-2xl"
-            priority
+            fetchPriority="high"
           />
         </div>
       </div>

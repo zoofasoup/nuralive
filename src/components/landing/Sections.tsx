@@ -1,22 +1,18 @@
-import { PERSONAS, BRAND, PROBLEMS } from "@/lib/config";
+import { PERSONAS, BRAND, PROBLEMS, waLink } from "@/lib/config";
 import Icon, { IconName } from "@/components/Icon";
 
 // Kumpulan section statis landing: urgency, trust, masalah, solusi,
 // komposisi, persona, perbandingan, jaminan.
 
-export function UrgencyBar({
-  stock,
-  weeklyOrders,
-}: {
-  stock: number;
-  weeklyOrders: number;
-}) {
-  // Angka di bar ini NYATA dari database - bukan counter animasi.
-  const items: string[] = [];
-  if (weeklyOrders > 0) items.push(`${weeklyOrders} pesanan minggu ini`);
-  else items.push("Batch perdana sudah dibuka");
-  if (stock > 0 && stock <= 150) items.push(`Stok batch ini: ${stock} botol`);
-  items.push("Order sebelum 15.00 WIB dikirim hari ini");
+export function UrgencyBar() {
+  // Klaim evergreen saja - tidak ada angka stok/pesanan yang dikarang.
+  // Situs ini static export tanpa backend, jadi angka apa pun di sini akan
+  // beku selamanya; jangan tampilkan sesuatu yang terlihat live padahal tidak.
+  const items: string[] = [
+    "Kirim seluruh Indonesia",
+    "COD tersedia",
+    "Order sebelum 15.00 WIB dikirim hari ini",
+  ];
 
   return (
     <div className="bg-leaf-deep py-2.5 text-center text-sm font-medium text-white">
@@ -113,7 +109,7 @@ export function Ingredients() {
   return (
     <section id="komposisi" className="bg-leaf-deep py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <p className="text-xs font-bold tracking-widest text-honey uppercase">
+        <p className="text-xs font-bold tracking-widest text-honey-bright uppercase">
           Komposisi
         </p>
         <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-white sm:text-4xl">
@@ -275,7 +271,12 @@ export function Guarantee() {
             </div>
           ))
         ) : (
-          <div className="rounded-xl border border-line bg-paper p-8">
+          <a
+            href={waLink("Halo NurAlive, saya mau tanya-tanya dulu sebelum beli.")}
+            target="_blank"
+            rel="noopener"
+            className="block rounded-xl border border-line bg-paper p-8 transition hover:border-leaf hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-leaf-deep"
+          >
             <span aria-hidden className="text-3xl">💬</span>
             <h3 className="font-display mt-3 text-xl font-bold text-ink">
               Ragu? Tanya Dulu, Gratis
@@ -284,7 +285,10 @@ export function Guarantee() {
               CS kami menjawab pertanyaan takaran, kondisi khusus, dan cara
               konsumsi - tanpa harus beli dulu. {BRAND.csHours}.
             </p>
-          </div>
+            <p className="mt-3 text-sm font-bold text-leaf-deep">
+              Chat WhatsApp sekarang →
+            </p>
+          </a>
         )}
       </div>
     </section>

@@ -34,7 +34,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/#paket"
-            className="rounded-full bg-gradient-to-r from-leaf to-leaf-deep px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:from-leaf-deep hover:to-leaf-deep"
+            className="rounded-full bg-gradient-to-r from-leaf to-leaf-deep px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:from-leaf-deep hover:to-leaf-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-leaf-deep"
           >
             Beli Sekarang
           </Link>
@@ -45,7 +45,7 @@ export default function Navbar() {
           aria-label={open ? "Tutup menu" : "Buka menu"}
           aria-expanded={open}
           onClick={() => setOpen(!open)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-line md:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-lg border border-line md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-leaf-deep"
         >
           <span className="text-xl leading-none">{open ? "✕" : "☰"}</span>
         </button>
@@ -66,7 +66,7 @@ export default function Navbar() {
           <Link
             href="/#paket"
             onClick={() => setOpen(false)}
-            className="mt-3 block rounded-full bg-gradient-to-r from-leaf to-leaf-deep px-5 py-3 text-center text-sm font-bold text-white"
+            className="mt-3 block rounded-full bg-gradient-to-r from-leaf to-leaf-deep px-5 py-3 text-center text-sm font-bold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-leaf-deep"
           >
             Beli Sekarang
           </Link>

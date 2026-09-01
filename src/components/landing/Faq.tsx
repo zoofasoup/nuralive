@@ -17,7 +17,7 @@ export default function Faq() {
               key={f.q}
               className="group rounded-2xl border border-line bg-cream/60 open:bg-cream"
             >
-              <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 text-sm font-bold text-ink [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer items-center justify-between gap-4 rounded-2xl px-6 py-4 text-sm font-bold text-ink focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-leaf-deep [&::-webkit-details-marker]:hidden">
                 {f.q}
                 <span
                   aria-hidden

@@ -10,7 +10,13 @@
   --leaf-deep: #325e22;
   --leaf-bright: #5fa845;
   --honey: #d6af51;
-  --honey-deep: #a8842d;
+  /* Darkened from #a8842d - the old value hit only 3.09:1 on --cream,
+     failing WCAG AA (4.5:1) for the small bold eyebrow labels that use it. */
+  --honey-deep: #8a590f;
+  /* For real (non-decorative) text on dark leaf-deep backgrounds - the base
+     --honey only hits 3.66:1 there, enough for decorative icons but not for
+     readable copy like the Komposisi label or form error text. */
+  --honey-bright: #e9c681;
   --honey-pale: #f1dfa3;
   --line: #c8d9a7;
   --white: #ffffff;
@@ -27,6 +33,7 @@
   --color-leaf-bright: var(--leaf-bright);
   --color-honey: var(--honey);
   --color-honey-deep: var(--honey-deep);
+  --color-honey-bright: var(--honey-bright);
   --color-honey-pale: var(--honey-pale);
   --color-line: var(--line);
   --color-paper: var(--white);
