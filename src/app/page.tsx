@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import HeroCarousel from "@/components/landing/HeroCarousel";
 import Hero from "@/components/landing/Hero";
 import {
   UrgencyBar,
@@ -20,6 +21,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
+        <HeroCarousel />
         <Hero />
         <UrgencyBar />
         <TrustBar />

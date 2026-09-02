@@ -9,11 +9,10 @@ export const BRAND = {
   company: "PT Setunggal Syifa Semesta",
   city: "Jakarta, Indonesia",
   csHours: "Senin-Sabtu, 08.00-20.00 WIB",
-  // Sertifikasi: biarkan null sampai nomornya RESMI keluar.
-  // Selama null, badge/section sertifikasi tidak dirender sama sekali
-  // (pelajaran dari Habi yang menampilkan "POM TR XXX XXX XXX").
-  bpomNumber: null as string | null,
-  halalNumber: null as string | null,
+  bpomNumber: "TR266032421" as string | null,
+  // Sumber: aset resmi tim desain (slide 2 hero carousel) yang menampilkan
+  // logo Halal Indonesia dengan nomor ini secara eksplisit.
+  halalNumber: "ID 35410035265411125" as string | null,
 };
 
 export type Pkg = {
@@ -28,45 +27,75 @@ export type Pkg = {
   freeShipping: boolean;
 };
 
+// Harga asli dari listing marketplace (Shopee/Tokopedia/TikTok Shop) -
+// konsisten di Rp185.000/botol sebagai harga normal, dengan diskon volume
+// bertingkat untuk bundle lebih besar. Jangan ubah tanpa mengecek listing
+// live dulu, supaya harga di situs ini tidak pernah berbeda dari marketplace.
 export const PACKAGES: Pkg[] = [
   {
-    id: "coba-1",
+    id: "isi-1",
     label: "Paket Coba",
     badge: null,
     bottles: 1,
     duration: "±10 hari",
-    price: 175_000,
-    compareAt: 195_000,
+    price: 150_000,
+    compareAt: 185_000,
     perks: ["1 botol 30 ml", "Panduan takaran per usia"],
     freeShipping: false,
   },
   {
-    id: "hemat-3",
+    id: "isi-2",
+    label: "Paket Hemat",
+    badge: null,
+    bottles: 2,
+    duration: "±20 hari",
+    price: 285_000,
+    compareAt: 370_000,
+    perks: ["2 botol 30 ml — cadangan di rumah & tas", "Panduan takaran per usia"],
+    freeShipping: false,
+  },
+  {
+    id: "isi-3",
     label: "Paket Rutin",
     badge: "Paling Populer",
     bottles: 3,
     duration: "±1 bulan",
-    price: 465_000,
-    compareAt: 525_000,
+    price: 417_000,
+    compareAt: 555_000,
     perks: [
-      "3 botol 30 ml - stok sebulan",
+      "3 botol 30 ml — stok sebulan",
       "Panduan takaran lengkap sekeluarga",
       "Prioritas konsultasi WA",
     ],
     freeShipping: false,
   },
   {
-    id: "keluarga-6",
+    id: "isi-6",
     label: "Paket Keluarga",
-    badge: "Nilai Terbaik",
+    badge: null,
     bottles: 6,
     duration: "±2 bulan",
-    price: 870_000,
-    compareAt: 1_050_000,
+    price: 810_000,
+    compareAt: 1_110_000,
     perks: [
-      "6 botol 30 ml - stok 2 bulan",
+      "6 botol 30 ml — stok 2 bulan",
       "Gratis ongkir seluruh Indonesia",
       "Konsultasi prioritas via WA",
+    ],
+    freeShipping: true,
+  },
+  {
+    id: "isi-12",
+    label: "Paket Stok Maksimal",
+    badge: "Nilai Terbaik",
+    bottles: 12,
+    duration: "±4 bulan",
+    price: 1_530_000,
+    compareAt: 2_220_000,
+    perks: [
+      "12 botol 30 ml — stok 4 bulan",
+      "Gratis ongkir seluruh Indonesia",
+      "Harga per botol paling hemat",
     ],
     freeShipping: true,
   },
@@ -74,7 +103,7 @@ export const PACKAGES: Pkg[] = [
 
 // Kanal beli eksternal - situs ini adalah hub, transaksi selesai di
 // masing-masing platform (bukan checkout internal).
-export type SalesChannel = { id: "shopee" | "tokopedia" | "website"; label: string; url: string };
+export type SalesChannel = { id: "shopee" | "tokopedia" | "tiktok" | "website"; label: string; url: string };
 export const SALES_CHANNELS: SalesChannel[] = [
   {
     id: "shopee",
@@ -87,9 +116,50 @@ export const SALES_CHANNELS: SalesChannel[] = [
     url: "https://tk.tokopedia.com/ZSVcyWtCx/",
   },
   {
+    id: "tiktok",
+    label: "TikTok Shop",
+    url: "https://shop.tiktok.com/view/product/1736868625173218429",
+  },
+  {
     id: "website",
     label: "Website Kami",
     url: "https://nuralive.jubelio.store/products/nuralive-herbal-alam-habbatussauda-black-seed-oil-membantu-daya-tahan-tubuh-meredakan-batuk",
+  },
+];
+
+// Banner carousel di atas Hero - aset asli dari tim desain (Musawara Creative),
+// masing-masing sudah 2 crop (desktop 1920x720, mobile 750x900) dengan
+// headline/CTA yang sudah dibakar ke dalam gambar itu sendiri.
+export type HeroSlide = {
+  id: string;
+  desktopSrc: string;
+  mobileSrc: string;
+  alt: string;
+};
+export const HERO_SLIDES: HeroSlide[] = [
+  {
+    id: "jaga-keluarga",
+    desktopSrc: "/hero/slide-1-desktop.jpg",
+    mobileSrc: "/hero/slide-1-mobile.jpg",
+    alt: "Jagain Keluarga Indonesia — #JagaYangJagain",
+  },
+  {
+    id: "legalitas",
+    desktopSrc: "/hero/slide-2-desktop.jpg",
+    mobileSrc: "/hero/slide-2-mobile.jpg",
+    alt: "Terdaftar BPOM, bersertifikat Halal Indonesia, dan konsultasi gratis",
+  },
+  {
+    id: "promo-launching",
+    desktopSrc: "/hero/slide-3-desktop.jpg",
+    mobileSrc: "/hero/slide-3-mobile.jpg",
+    alt: "Jaga 1000 Rumah Pertama — harga launching Rp150.000 dari Rp185.000",
+  },
+  {
+    id: "kanal-beli",
+    desktopSrc: "/hero/slide-4-desktop.jpg",
+    mobileSrc: "/hero/slide-4-mobile.jpg",
+    alt: "NurAlive tersedia di Shopee, Tokopedia, TikTok Shop, website resmi, dan WhatsApp — pilih toko favoritmu",
   },
 ];
 

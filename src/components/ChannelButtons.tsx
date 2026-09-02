@@ -43,6 +43,14 @@ function StoreIcon() {
   );
 }
 
+function TikTokIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>
+      <path d="M16.6 5.82c-.9-.98-1.4-2.26-1.4-3.62h-3.15v13.44a3.16 3.16 0 1 1-2.24-3.03v-3.2a6.3 6.3 0 1 0 5.39 6.24V9.4a6.9 6.9 0 0 0 4.02 1.29V7.53a3.86 3.86 0 0 1-2.62-1.71Z" />
+    </svg>
+  );
+}
+
 function WhatsAppIcon() {
   return (
     <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>
@@ -54,6 +62,7 @@ function WhatsAppIcon() {
 const ICON: Record<string, () => React.ReactElement> = {
   shopee: ShopeeIcon,
   tokopedia: TokopediaIcon,
+  tiktok: TikTokIcon,
   website: StoreIcon,
 };
 
@@ -62,7 +71,8 @@ const ICON: Record<string, () => React.ReactElement> = {
 const CHANNEL_STYLE: Record<string, string> = {
   shopee: "border-[#EE4D2D]/30 text-[#d83d0e] hover:bg-[#EE4D2D]/10",
   tokopedia: "border-[#03AC0E]/30 text-[#148802] hover:bg-[#03AC0E]/10",
-  website: "border-leaf/40 text-leaf-deep hover:bg-leaf/10",
+  tiktok: "border-black/25 text-black hover:bg-black/5",
+  website: "border-forest/40 text-forest-deep hover:bg-forest/10",
 };
 
 /**
@@ -78,7 +88,7 @@ export default function ChannelButtons({
   className?: string;
 }) {
   return (
-    <div className={`grid grid-cols-2 gap-2.5 sm:grid-cols-4 ${className}`}>
+    <div className={`grid grid-cols-2 gap-2.5 ${className}`}>
       {SALES_CHANNELS.map((c) => {
         const Icon = ICON[c.id];
         return (
@@ -87,7 +97,7 @@ export default function ChannelButtons({
             href={c.url}
             target="_blank"
             rel="noopener"
-            className={`flex items-center justify-center gap-2 rounded-lg border-2 bg-paper px-3 py-3 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-leaf-deep ${CHANNEL_STYLE[c.id]}`}
+            className={`flex items-center justify-center gap-2 rounded-lg border-2 bg-paper px-3 py-3 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-deep ${CHANNEL_STYLE[c.id]}`}
           >
             <Icon />
             {c.label}
@@ -98,7 +108,7 @@ export default function ChannelButtons({
         href={waLink(`Halo NurAlive, saya mau tanya/pesan ${context} lewat WhatsApp.`)}
         target="_blank"
         rel="noopener"
-        className="flex items-center justify-center gap-2 rounded-lg border-2 border-[#25D366]/30 bg-paper px-3 py-3 text-sm font-bold text-[#148543] transition hover:bg-[#25D366]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-leaf-deep"
+        className="col-span-2 flex items-center justify-center gap-2 rounded-lg border-2 border-[#25D366]/30 bg-paper px-3 py-3 text-sm font-bold text-[#148543] transition hover:bg-[#25D366]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-deep"
       >
         <WhatsAppIcon />
         WhatsApp

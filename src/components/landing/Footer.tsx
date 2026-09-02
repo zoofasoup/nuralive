@@ -23,8 +23,8 @@ export default function Footer() {
         <div>
           <p className="text-xs font-bold tracking-widest text-ink uppercase">Belanja</p>
           <ul className="mt-4 space-y-2.5 text-sm">
-            <li><Link href="/#paket" className="text-ink-soft hover:text-leaf">Paket &amp; Harga</Link></li>
-            <li><Link href="/#faq" className="text-ink-soft hover:text-leaf">FAQ</Link></li>
+            <li><Link href="/#paket" className="text-ink-soft hover:text-forest">Paket &amp; Harga</Link></li>
+            <li><Link href="/#faq" className="text-ink-soft hover:text-forest">FAQ</Link></li>
           </ul>
         </div>
 
@@ -36,15 +36,15 @@ export default function Footer() {
                 href={waLink("Halo NurAlive, saya butuh bantuan.")}
                 target="_blank"
                 rel="noopener"
-                className="text-ink-soft hover:text-leaf"
+                className="text-ink-soft hover:text-forest"
               >
                 WhatsApp CS: {BRAND.whatsappDisplay}
               </a>
             </li>
             <li className="text-ink-soft">{BRAND.csHours}</li>
-            <li><Link href="/pengiriman" className="text-ink-soft hover:text-leaf">Pengiriman &amp; Retur</Link></li>
-            <li><Link href="/syarat-ketentuan" className="text-ink-soft hover:text-leaf">Syarat &amp; Ketentuan</Link></li>
-            <li><Link href="/kebijakan-privasi" className="text-ink-soft hover:text-leaf">Kebijakan Privasi</Link></li>
+            <li><Link href="/pengiriman" className="text-ink-soft hover:text-forest">Pengiriman &amp; Retur</Link></li>
+            <li><Link href="/syarat-ketentuan" className="text-ink-soft hover:text-forest">Syarat &amp; Ketentuan</Link></li>
+            <li><Link href="/kebijakan-privasi" className="text-ink-soft hover:text-forest">Kebijakan Privasi</Link></li>
           </ul>
         </div>
       </div>

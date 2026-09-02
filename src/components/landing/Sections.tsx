@@ -15,11 +15,15 @@ export function UrgencyBar() {
   ];
 
   return (
-    <div className="bg-leaf-deep py-2.5 text-center text-sm font-medium text-white">
+    <div className="bg-forest-deep py-2.5 text-center text-sm font-medium text-white">
       <p className="mx-auto max-w-6xl px-4">
         {items.map((t, i) => (
           <span key={t}>
-            {i > 0 && <span className="mx-2 text-honey" aria-hidden>·</span>}
+            {i > 0 && (
+              <span className="mx-2 text-white/40" aria-hidden>
+                ·
+              </span>
+            )}
             {t}
           </span>
         ))}
@@ -37,46 +41,43 @@ const TRUST = [
 
 export function TrustBar() {
   return (
-    <section className="bg-cream-deep border-b border-line/50">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-8 sm:px-6 lg:grid-cols-4">
-        {TRUST.map((t) => (
-          <div key={t.title} className="flex items-start gap-3">
-            <Icon name={t.icon} className="h-7 w-7 text-leaf" aria-hidden />
-            <div>
-              <p className="text-sm font-bold text-ink">{t.title}</p>
-              <p className="mt-0.5 text-xs text-ink-soft">{t.desc}</p>
+    <section className="border-y border-line bg-cream">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid grid-cols-1 divide-y divide-line sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
+          {TRUST.map((t) => (
+            <div key={t.title} className="flex items-start gap-3 py-6 sm:px-6 sm:first:pl-0 sm:last:pr-0">
+              <Icon name={t.icon} className="h-6 w-6 shrink-0 text-forest" aria-hidden />
+              <div>
+                <p className="text-sm font-bold text-ink">{t.title}</p>
+                <p className="mt-0.5 text-xs text-ink-soft">{t.desc}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-
-
 export function Problem() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-      <p className="text-xs font-bold tracking-widest text-honey-deep uppercase">
-        Terasa familiar?
-      </p>
-      <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-ink sm:text-4xl">
-        Musim hujan, polusi, dan jadwal padat menguji daya tahan keluarga setiap hari
-      </h2>
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {PROBLEMS.map((p, i) => (
-          <div
-            key={p.title}
-            className="flex flex-col border-t border-line/60 pt-5"
-          >
-            <p className="font-display text-lg font-semibold text-leaf-deep">
-              {String(i + 1).padStart(2, "0")}
-            </p>
-            <p className="mt-2 font-bold text-ink">{p.title}</p>
-            <p className="mt-1.5 text-sm text-ink-soft">{p.desc}</p>
-          </div>
-        ))}
+    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
+        <h2 className="font-display max-w-md text-3xl font-bold text-ink text-balance sm:text-4xl">
+          Musim hujan, polusi, dan jadwal padat menguji daya tahan keluarga
+          setiap hari
+        </h2>
+        <ul className="divide-y divide-line">
+          {PROBLEMS.map((p) => (
+            <li key={p.title} className="flex gap-4 py-5 first:pt-0">
+              <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-clay" aria-hidden />
+              <div>
+                <p className="font-bold text-ink">{p.title}</p>
+                <p className="mt-1 text-sm text-ink-soft">{p.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
@@ -85,13 +86,13 @@ export function Problem() {
 const INGREDIENTS = [
   {
     name: "Minyak Habbatussauda",
-    sub: "Nigella sativa - jintan hitam",
+    sub: "Nigella sativa — jintan hitam",
     points: [
       "Mengandung senyawa aktif thymoquinone",
       "Dikenal lama dalam tradisi herbal untuk daya tahan tubuh",
       "Membantu melegakan tenggorokan dan pernapasan",
     ],
-    emoji: "🖤",
+    icon: "seed" as IconName,
   },
   {
     name: "Minyak Zaitun Extra Virgin",
@@ -101,35 +102,34 @@ const INGREDIENTS = [
       "Menghaluskan rasa & menenangkan tenggorokan",
       "Membantu penyerapan nutrisi minyak habbatussauda",
     ],
-    emoji: "🫒",
+    icon: "drop" as IconName,
   },
 ];
 
 export function Ingredients() {
   return (
-    <section id="komposisi" className="bg-leaf-deep py-16 sm:py-20">
+    <section id="komposisi" className="bg-forest-deep py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <p className="text-xs font-bold tracking-widest text-honey-bright uppercase">
-          Komposisi
-        </p>
-        <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-white sm:text-4xl">
+        <h2 className="font-display max-w-2xl text-3xl font-bold text-white text-balance sm:text-4xl">
           Kebaikan murni dari alam
         </h2>
-        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/90">
-           Hanya dua bahan utama: minyak habbatussauda yang kaya thymoquinone dan minyak zaitun extra‑virgin. Kedua bahan ini sudah dipakai secara tradisional sejak ribuan tahun, tanpa tambahan bahan kimia.
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/80">
+          Hanya dua bahan utama: minyak habbatussauda yang kaya thymoquinone
+          dan minyak zaitun extra-virgin. Kedua bahan ini sudah dipakai secara
+          tradisional sejak ribuan tahun, tanpa tambahan bahan kimia.
         </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-px overflow-hidden rounded-xl bg-white/10 md:grid-cols-2">
           {INGREDIENTS.map((ing) => (
-            <div key={ing.name} className="rounded-xl bg-white/5 p-8 border border-white/10">
-              <span aria-hidden className="text-3xl">{ing.emoji}</span>
+            <div key={ing.name} className="bg-forest-deep p-8">
+              <Icon name={ing.icon} className="h-8 w-8 text-clay-pale" aria-hidden />
               <h3 className="font-display mt-4 text-xl font-bold text-white">
                 {ing.name}
               </h3>
-              <p className="mt-1 text-sm italic text-white/70">{ing.sub}</p>
+              <p className="mt-1 text-sm text-white/60">{ing.sub}</p>
               <ul className="mt-5 space-y-3">
                 {ing.points.map((pt) => (
-                  <li key={pt} className="flex gap-2.5 text-sm text-white/90">
-                    <span aria-hidden className="mt-0.5 font-bold text-honey">✓</span>
+                  <li key={pt} className="flex gap-2.5 text-sm text-white/85">
+                    <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-clay-pale" aria-hidden />
                     {pt}
                   </li>
                 ))}
@@ -137,10 +137,10 @@ export function Ingredients() {
             </div>
           ))}
         </div>
-        <p className="mt-6 text-xs text-white/60">
+        <p className="mt-6 text-xs text-white/50">
           NurAlive adalah suplemen kesehatan, bukan obat, dan tidak dimaksudkan
-          untuk mendiagnosis atau menyembuhkan penyakit. Bila keluhan berlanjut,
-          hubungi dokter.
+          untuk mendiagnosis atau menyembuhkan penyakit. Bila keluhan
+          berlanjut, hubungi dokter.
         </p>
       </div>
     </section>
@@ -149,26 +149,27 @@ export function Ingredients() {
 
 export function ForWho() {
   return (
-    <section id="untuk-siapa" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-      <p className="text-xs font-bold tracking-widest text-honey-deep uppercase">
-        Cocok untuk
-      </p>
-      <h2 className="font-display mt-2 max-w-2xl text-3xl font-bold text-ink sm:text-4xl">
+    <section id="untuk-siapa" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+      <h2 className="font-display max-w-2xl text-3xl font-bold text-ink text-balance sm:text-4xl">
         Satu botol kecil, dipakai seisi rumah
       </h2>
       <p className="mt-3 max-w-xl text-ink-soft">
-        Dari anak usia 2 tahun sampai lansia - cukup diteteskan langsung, atau
+        Dari anak usia 2 tahun sampai lansia — cukup diteteskan langsung, atau
         dicampur sesendok madu murni untuk anak-anak.
       </p>
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mt-8 flex flex-wrap gap-3">
         {PERSONAS.map((p) => (
           <div
             key={p.title}
-            className="flex flex-col items-center text-center p-4"
+            className="flex items-center gap-3 rounded-full border border-line bg-cream py-3 pr-5 pl-3.5"
           >
-            <Icon name={p.icon as IconName} className="h-10 w-10 text-leaf mb-2" aria-hidden />
-            <p className="mt-3 text-sm font-bold text-ink">{p.title}</p>
-            <p className="mt-1 text-xs text-ink-soft">{p.desc}</p>
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-forest-pale">
+              <Icon name={p.icon as IconName} className="h-4.5 w-4.5 text-forest-deep" aria-hidden />
+            </span>
+            <div>
+              <p className="text-sm font-bold text-ink">{p.title}</p>
+              <p className="text-xs text-ink-soft">{p.desc}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -178,25 +179,37 @@ export function ForWho() {
 
 const COMPARE = [
   { label: "Bahan alami tanpa tambahan kimia", nura: true, sirup: false, madu: true },
-  { label: "Praktis - tinggal tetes, tanpa takar sendok", nura: true, sirup: false, madu: false },
+  { label: "Praktis — tinggal tetes, tanpa takar sendok", nura: true, sirup: false, madu: false },
   { label: "Satu produk untuk anak 2th s.d. lansia", nura: true, sirup: false, madu: true },
   { label: "Kandungan habbatussauda + zaitun EV terstandar", nura: true, sirup: false, madu: false },
   { label: "Untuk pemeliharaan harian, bukan hanya saat sakit", nura: true, sirup: false, madu: true },
 ];
 
+function CompareMark({ value }: { value: boolean }) {
+  return value ? (
+    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-forest-pale" aria-label="ya">
+      <Icon name="check" className="h-3.5 w-3.5 text-forest-deep" aria-hidden />
+    </span>
+  ) : (
+    <span className="text-ink-soft/40" aria-label="tidak">
+      —
+    </span>
+  );
+}
+
 export function Comparison() {
   return (
-    <section className="bg-cream-deep py-16 sm:py-20">
+    <section className="bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <h2 className="font-display text-center text-3xl font-bold text-ink text-balance sm:text-4xl">
           Kenapa keluarga memilih NurAlive?
         </h2>
-        <div className="mt-10 overflow-x-auto">
+        <div className="mt-10 overflow-x-auto rounded-xl border border-line bg-paper">
           <table className="w-full min-w-[560px] text-sm text-left">
             <thead>
               <tr className="border-b border-line text-left">
                 <th className="p-4 font-semibold text-ink-soft">&nbsp;</th>
-                <th className="p-4 text-center font-display text-base font-bold text-leaf-deep">
+                <th className="p-4 text-center font-display text-base font-bold text-forest-deep">
                   NurAlive
                 </th>
                 <th className="p-4 text-center font-semibold text-ink-soft">
@@ -209,16 +222,16 @@ export function Comparison() {
             </thead>
             <tbody>
               {COMPARE.map((row) => (
-                <tr key={row.label} className="border-b border-line/60 last:border-0">
+                <tr key={row.label} className="border-b border-line last:border-0">
                   <td className="p-4 text-ink">{row.label}</td>
-                  <td className="bg-leaf/5 p-4 text-center font-bold text-leaf" aria-label={row.nura ? "ya" : "tidak"}>
-                    {row.nura ? "Ya" : <span className="text-ink-soft/40">-</span>}
+                  <td className="bg-forest-pale/30 p-4 text-center">
+                    <CompareMark value={row.nura} />
                   </td>
-                  <td className="p-4 text-center text-ink" aria-label={row.sirup ? "ya" : "tidak"}>
-                    {row.sirup ? "Ya" : <span className="text-ink-soft/40">-</span>}
+                  <td className="p-4 text-center">
+                    <CompareMark value={row.sirup} />
                   </td>
-                  <td className="p-4 text-center text-ink" aria-label={row.madu ? "ya" : "tidak"}>
-                    {row.madu ? "Ya" : <span className="text-ink-soft/40">-</span>}
+                  <td className="p-4 text-center">
+                    <CompareMark value={row.madu} />
                   </td>
                 </tr>
               ))}
@@ -240,57 +253,60 @@ export function Guarantee() {
   }
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-      <div className="grid gap-6 md:grid-cols-3">
-        <div className="rounded-xl bg-honey-pale p-8">
-          <span aria-hidden className="text-3xl">🛡️</span>
-          <h3 className="font-display mt-3 text-xl font-bold text-ink">
+    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div className="rounded-xl border border-line bg-paper p-8">
+          <Icon name="shield" className="h-8 w-8 text-forest" aria-hidden />
+          <h3 className="font-display mt-4 text-xl font-bold text-ink">
             Garansi Pecah / Rusak, Ganti Baru
           </h3>
           <p className="mt-2 text-sm text-ink-soft">
             Botol pecah di jalan atau paket tidak sesuai? Foto & kirim ke CS
-            dalam 1×24 jam - kami kirim penggantinya tanpa ribet.
+            dalam 1×24 jam — kami kirim penggantinya tanpa ribet.
           </p>
         </div>
         <div className="rounded-xl border border-line bg-paper p-8">
-          <span aria-hidden className="text-3xl">🇮🇩</span>
-          <h3 className="font-display mt-3 text-xl font-bold text-ink">
+          <Icon name="badge" className="h-8 w-8 text-forest" aria-hidden />
+          <h3 className="font-display mt-4 text-xl font-bold text-ink">
             Diracik &amp; Dikemas di Indonesia
           </h3>
           <p className="mt-2 text-sm text-ink-soft">
-            Diproduksi {BRAND.company} dengan standar kebersihan pangan, diawasi
-            di setiap batch.
+            Diproduksi {BRAND.company} dengan standar kebersihan pangan,
+            diawasi di setiap batch.
           </p>
         </div>
-        {certs.length > 0 ? (
+        {certs.length > 0 &&
           certs.map((c) => (
             <div key={c.title} className="rounded-xl border border-line bg-paper p-8">
-              <span aria-hidden className="text-3xl">✅</span>
-              <h3 className="font-display mt-3 text-xl font-bold text-ink">{c.title}</h3>
+              <Icon name="badge" className="h-8 w-8 text-forest" aria-hidden />
+              <h3 className="font-display mt-4 text-xl font-bold text-ink">{c.title}</h3>
               <p className="mt-2 text-sm text-ink-soft">{c.desc}</p>
             </div>
-          ))
-        ) : (
-          <a
-            href={waLink("Halo NurAlive, saya mau tanya-tanya dulu sebelum beli.")}
-            target="_blank"
-            rel="noopener"
-            className="block rounded-xl border border-line bg-paper p-8 transition hover:border-leaf hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-leaf-deep"
-          >
-            <span aria-hidden className="text-3xl">💬</span>
-            <h3 className="font-display mt-3 text-xl font-bold text-ink">
+          ))}
+      </div>
+
+      <a
+        href={waLink("Halo NurAlive, saya mau tanya-tanya dulu sebelum beli.")}
+        target="_blank"
+        rel="noopener"
+        className="mt-6 flex flex-col items-start justify-between gap-4 rounded-xl border border-line bg-cream p-8 transition hover:border-forest sm:flex-row sm:items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-deep"
+      >
+        <div className="flex items-start gap-4">
+          <Icon name="chat" className="h-8 w-8 shrink-0 text-forest" aria-hidden />
+          <div>
+            <h3 className="font-display text-xl font-bold text-ink">
               Ragu? Tanya Dulu, Gratis
             </h3>
             <p className="mt-2 text-sm text-ink-soft">
               CS kami menjawab pertanyaan takaran, kondisi khusus, dan cara
-              konsumsi - tanpa harus beli dulu. {BRAND.csHours}.
+              konsumsi — tanpa harus beli dulu. {BRAND.csHours}.
             </p>
-            <p className="mt-3 text-sm font-bold text-leaf-deep">
-              Chat WhatsApp sekarang →
-            </p>
-          </a>
-        )}
-      </div>
+          </div>
+        </div>
+        <span className="shrink-0 rounded-lg bg-forest px-5 py-3 text-sm font-bold text-white">
+          Chat WhatsApp
+        </span>
+      </a>
     </section>
   );
 }

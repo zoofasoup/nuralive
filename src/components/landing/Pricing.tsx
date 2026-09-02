@@ -1,22 +1,20 @@
 import { PACKAGES, formatRupiah } from "@/lib/config";
 import ChannelButtons from "@/components/ChannelButtons";
+import Icon from "@/components/Icon";
 
 export default function Pricing() {
   return (
-    <section id="paket" className="bg-paper py-16 sm:py-20">
+    <section id="paket" className="bg-paper py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <p className="text-center text-xs font-bold tracking-widest text-honey-deep uppercase">
-          Paket &amp; Harga
-        </p>
-        <h2 className="font-display mt-2 text-center text-3xl font-bold text-ink sm:text-4xl">
+        <h2 className="font-display text-center text-3xl font-bold text-ink text-balance sm:text-4xl">
           Pilih sesuai kebutuhan rumah
         </h2>
         <p className="mx-auto mt-3 max-w-lg text-center text-ink-soft">
-          Semua paket dikirim dari gudang kami - bukan dropship. Harga sudah
+          Semua paket dikirim dari gudang kami — bukan dropship. Harga sudah
           termasuk kemasan aman anti-pecah.
         </p>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {PACKAGES.map((p) => {
             const highlight = p.badge === "Paling Populer";
             return (
@@ -24,16 +22,14 @@ export default function Pricing() {
                 key={p.id}
                 className={`relative flex flex-col rounded-xl border p-8 ${
                   highlight
-                    ? "border-leaf bg-cream shadow-md lg:-translate-y-3"
-                    : "border-line bg-cream/50"
+                    ? "border-forest bg-paper shadow-lg lg:-translate-y-3"
+                    : "border-line bg-paper"
                 }`}
               >
                 {p.badge && (
                   <span
-                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-md px-4 py-1 text-xs font-bold whitespace-nowrap ${
-                      highlight
-                        ? "bg-gradient-to-r from-leaf to-leaf-deep text-white"
-                        : "bg-gradient-to-r from-honey to-honey-deep text-white"
+                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-md px-4 py-1 text-xs font-bold whitespace-nowrap text-white ${
+                      highlight ? "bg-forest" : "bg-clay"
                     }`}
                   >
                     {p.badge}
@@ -46,18 +42,18 @@ export default function Pricing() {
                 </p>
 
                 <div className="mt-5 flex items-baseline gap-2">
-                  <span className="font-display text-3xl font-bold text-leaf-deep">
+                  <span className="font-display text-3xl font-bold text-ink">
                     {formatRupiah(p.price)}
                   </span>
                 </div>
                 <p className="mt-1 text-sm text-ink-soft">
                   <s>{formatRupiah(p.compareAt)}</s>{" "}
-                  <span className="font-bold text-honey-deep">
+                  <span className="font-bold text-clay-deep">
                     hemat {formatRupiah(p.compareAt - p.price)}
                   </span>
                 </p>
                 <div className="mt-3">
-                  <span className="inline-block rounded-md bg-honey/20 px-3 py-1 text-sm font-bold text-honey-deep">
+                  <span className="inline-block rounded-md bg-clay-pale px-3 py-1 text-sm font-bold text-clay-deep">
                     ≈ {formatRupiah(Math.round(p.price / p.bottles))} / botol
                   </span>
                 </div>
@@ -65,13 +61,13 @@ export default function Pricing() {
                 <ul className="mt-5 flex-1 space-y-2.5">
                   {p.perks.map((perk) => (
                     <li key={perk} className="flex gap-2.5 text-sm text-ink">
-                      <span aria-hidden className="mt-0.5 font-bold text-leaf">✓</span>
+                      <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-forest" aria-hidden />
                       {perk}
                     </li>
                   ))}
                   {p.freeShipping && (
-                    <li className="flex gap-2.5 text-sm font-bold text-honey-deep">
-                      <span aria-hidden className="mt-0.5">🚚</span>
+                    <li className="flex gap-2.5 text-sm font-bold text-clay-deep">
+                      <Icon name="truck" className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
                       Gratis ongkir seluruh Indonesia
                     </li>
                   )}

@@ -1,6 +1,20 @@
 import React from "react";
 
-export type IconName = "leaf" | "truck" | "kid" | "city" | "breath" | "cash" | "chat";
+export type IconName =
+  | "leaf"
+  | "truck"
+  | "kid"
+  | "city"
+  | "breath"
+  | "cash"
+  | "chat"
+  | "check"
+  | "star"
+  | "shield"
+  | "badge"
+  | "chevron"
+  | "drop"
+  | "seed";
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
   name: IconName;
@@ -59,6 +73,52 @@ export default function Icon({ name, className = "h-6 w-6", ...props }: IconProp
       return (
         <svg {...baseProps} strokeLinecap="round" strokeLinejoin="round">
           <path d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+        </svg>
+      );
+    case "check":
+      return (
+        <svg {...baseProps} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}>
+          <path d="M4.5 12.75l6 6 9-13.5" />
+        </svg>
+      );
+    case "star":
+      return (
+        <svg {...baseProps} fill="currentColor" stroke="none" viewBox="0 0 20 20">
+          <path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7L10 1.5Z" />
+        </svg>
+      );
+    case "shield":
+      return (
+        <svg {...baseProps} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 3.25 5 5.75v5.4c0 4.62 2.98 8.34 7 9.6 4.02-1.26 7-4.98 7-9.6v-5.4L12 3.25Z" />
+          <path d="M9 12.25l2 2 4-4.25" />
+        </svg>
+      );
+    case "badge":
+      return (
+        <svg {...baseProps} strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="9.5" r="6.25" />
+          <path d="M9 8.75l2 2 3.5-3.75" />
+          <path d="M8.3 14.9 6.5 21.5l5.5-2.5 5.5 2.5-1.8-6.6" />
+        </svg>
+      );
+    case "chevron":
+      return (
+        <svg {...baseProps} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}>
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      );
+    case "drop":
+      return (
+        <svg {...baseProps} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 3c3 4.2 6 8 6 11.5A6 6 0 1 1 6 14.5C6 11 9 6.8 12 3Z" />
+        </svg>
+      );
+    case "seed":
+      return (
+        <svg {...baseProps} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 21c4-1 6.5-4.2 6.5-8.2 0-4.4-3-7.6-6.5-9.8-3.5 2.2-6.5 5.4-6.5 9.8C5.5 16.8 8 20 12 21Z" />
+          <path d="M12 3v18" />
         </svg>
       );
     default:

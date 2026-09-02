@@ -1,45 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  /* NurAlive design tokens - "apotek alam yang hangat" */
-  --cream: #ebf5d5;
-  --cream-deep: #dcedb4;
-  --ink: #254215;
-  --ink-soft: #4c6b3b;
-  --leaf: #4a8137;
-  --leaf-deep: #325e22;
-  --leaf-bright: #5fa845;
-  --honey: #d6af51;
-  /* Darkened from #a8842d - the old value hit only 3.09:1 on --cream,
-     failing WCAG AA (4.5:1) for the small bold eyebrow labels that use it. */
-  --honey-deep: #8a590f;
-  /* For real (non-decorative) text on dark leaf-deep backgrounds - the base
-     --honey only hits 3.66:1 there, enough for decorative icons but not for
-     readable copy like the Komposisi label or form error text. */
-  --honey-bright: #e9c681;
-  --honey-pale: #f1dfa3;
-  --line: #c8d9a7;
+  /* NurAlive design tokens - canon DTC-wellness execution (quality bar: ritual.com) */
+  --paper: #fbf8f2;
+  --cream: #f3eee1;
+  --cream-deep: #e8e0cc;
+  --ink: #22301c;
+  --ink-soft: #516049;
+  --forest: #2f4f2a;
+  --forest-deep: #1f3a1c;
+  --forest-pale: #dde6d2;
+  --clay: #ae501f;
+  --clay-deep: #8b3f17;
+  --clay-pale: #f3dcc9;
+  --line: #ddd5c0;
   --white: #ffffff;
-  --danger: #b04a32;
+  --danger: #b3261e;
 }
 
 @theme inline {
+  --color-paper: var(--paper);
   --color-cream: var(--cream);
   --color-cream-deep: var(--cream-deep);
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
-  --color-leaf: var(--leaf);
-  --color-leaf-deep: var(--leaf-deep);
-  --color-leaf-bright: var(--leaf-bright);
-  --color-honey: var(--honey);
-  --color-honey-deep: var(--honey-deep);
-  --color-honey-bright: var(--honey-bright);
-  --color-honey-pale: var(--honey-pale);
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-forest-pale: var(--forest-pale);
+  --color-clay: var(--clay);
+  --color-clay-deep: var(--clay-deep);
+  --color-clay-pale: var(--clay-pale);
   --color-line: var(--line);
-  --color-paper: var(--white);
   --color-danger: var(--danger);
-  --font-display: var(--font-krona-one);
-  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-parkinsans);
+  --font-sans: var(--font-sn-pro);
 }
 
 html {
@@ -54,22 +48,23 @@ html {
 }
 
 body {
-  background: var(--cream);
+  background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-jakarta), system-ui, sans-serif;
+  font-family: var(--font-sn-pro), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 .font-display {
-  font-family: var(--font-krona-one), system-ui, sans-serif;
-  letter-spacing: -0.08em;
+  font-family: var(--font-parkinsans), system-ui, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 ::selection {
-  background: var(--honey-pale);
-  color: var(--leaf-deep);
+  background: var(--clay-pale);
+  color: var(--clay-deep);
 }
 
+/* Single authored entrance for the hero - not repeated per-section. */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -84,7 +79,7 @@ body {
 @keyframes fadeScale {
   from {
     opacity: 0;
-    transform: scale(0.92);
+    transform: scale(0.94);
   }
   to {
     opacity: 1;
@@ -94,9 +89,9 @@ body {
 
 @media (prefers-reduced-motion: no-preference) {
   .fade-up {
-    animation: fadeUp 0.7s ease-out both;
+    animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
   .fade-scale {
-    animation: fadeScale 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: fadeScale 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 }

@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Krona_One, Plus_Jakarta_Sans } from "next/font/google";
+import { Parkinsans, SN_Pro } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { BRAND } from "@/lib/config";
 
-const kronaOne = Krona_One({
-  variable: "--font-krona-one",
+const parkinsans = Parkinsans({
+  variable: "--font-parkinsans",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["500", "600", "700", "800"],
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const snPro = SN_Pro({
+  variable: "--font-sn-pro",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -40,8 +40,31 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id" className={`${kronaOne.variable} ${jakarta.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-medium">
+    <html lang="id" className={`${parkinsans.variable} ${snPro.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col">
+        <div
+          aria-hidden
+          style={{ display: "none" }}
+          dangerouslySetInnerHTML={{
+            __html: `<!--
+THESIS: Trust earned through clarity, not a jamu-nostalgia costume - a clean
+modern supplement shelf, not a poster.
+OWN-WORLD: warm paper ground, deep forest green + burnt clay accent, flat
+solid fills (no gradients), Parkinsans display / SN Pro body, drawn line
+icons only (no emoji, no eyebrows, no card-for-everything).
+STORY: a busy Indonesian parent sees one small bottle that covers the whole
+family, trusts the two-ingredient simplicity, and picks a channel
+(Shopee/Tokopedia/Website/WhatsApp) to buy from.
+FIRST VIEWPORT: headline + subcopy + two actions on the left, real product
+photo on the right, on a plain paper ground - no gradient, no floating
+badge soup.
+FORM: canon (standing exit chosen over the assigned "Iklan Jamu Jadul"
+direction), quality bar ritual.com, seed key d8ef2600.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the
+finish review, the verdict, and DESIGN.md.
+-->`,
+          }}
+        />
         {children}
         {GA_ID && (
           <>
