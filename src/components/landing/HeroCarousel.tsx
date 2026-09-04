@@ -6,6 +6,7 @@ import { HERO_SLIDES } from "@/lib/config";
 import Icon from "@/components/Icon";
 
 const AUTOPLAY_MS = 6000;
+const SWIPE_THRESHOLD_PX = 40;
 const COUNT = HERO_SLIDES.length;
 
 export default function HeroCarousel() {
@@ -34,20 +35,68 @@ export default function HeroCarousel() {
     // a manual click always buys a full fresh cycle before autoplay resumes.
   }, [paused, index, step]);
 
+  // Swipe/drag: pointer events cover touch + mouse + pen in one handler set.
+  // A drag that moves far enough horizontally steps the carousel and, on
+  // release, swallows the click so the underlying slide Link doesn't
+  // navigate - only a real tap/click should follow through to #paket.
+  const dragRef = useRef<{ startX: number; startY: number; dragging: boolean } | null>(null);
+  const [wasDragged, setWasDragged] = useState(false);
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    dragRef.current = { startX: e.clientX, startY: e.clientY, dragging: false };
+    setPaused(true);
+  };
+  const onPointerMove = (e: React.PointerEvent) => {
+    const drag = dragRef.current;
+    if (!drag) return;
+    const dx = e.clientX - drag.startX;
+    const dy = e.clientY - drag.startY;
+    if (!drag.dragging && Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
+      drag.dragging = true;
+      // Only claim the gesture (and block vertical page scroll) once we're
+      // sure it's a horizontal swipe, not a scroll.
+      e.currentTarget.setPointerCapture(e.pointerId);
+    }
+  };
+  const onPointerUp = (e: React.PointerEvent) => {
+    const drag = dragRef.current;
+    dragRef.current = null;
+    setPaused(false);
+    if (!drag?.dragging) return;
+    const dx = e.clientX - drag.startX;
+    if (Math.abs(dx) >= SWIPE_THRESHOLD_PX) {
+      step(dx < 0 ? 1 : -1);
+    }
+    setWasDragged(true);
+    // Clear after the click event (which fires right after pointerup) has
+    // had a chance to check it.
+    setTimeout(() => setWasDragged(false), 0);
+  };
+
   return (
     <section
       aria-label="Promo NurAlive"
-      className="relative mt-16 w-full overflow-hidden bg-forest-deep"
+      className="relative mt-[100px] w-full overflow-hidden bg-forest-deep"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="relative aspect-[750/900] w-full sm:aspect-[1920/720]">
+      <div
+        className="relative aspect-[750/900] w-full touch-pan-y select-none sm:aspect-[1920/720]"
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+      >
         {HERO_SLIDES.map((slide, i) => (
           <Link
             key={slide.id}
             href="/#paket"
+            draggable={false}
+            onClick={(e) => {
+              if (wasDragged) e.preventDefault();
+            }}
             aria-hidden={i !== index}
             tabIndex={i === index ? 0 : -1}
             className={`absolute inset-0 block transition-opacity duration-700 ease-out ${
@@ -62,6 +111,7 @@ export default function HeroCarousel() {
                 className="h-full w-full object-cover"
                 loading={i === 0 ? "eager" : "lazy"}
                 fetchPriority={i === 0 ? "high" : "auto"}
+                draggable={false}
               />
             </picture>
           </Link>

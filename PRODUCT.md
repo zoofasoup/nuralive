@@ -39,8 +39,9 @@ kimia. Bahasa klaim kesehatan dijaga dalam koridor suplemen
 Transaksi terjadi di luar situs (Shopee, Tokopedia, website mitra Jubelio,
 atau WhatsApp) — situs sendiri adalah Next.js static export tanpa
 backend/database/checkout internal. CS merespons pertanyaan dan pemesanan
-manual lewat WhatsApp (nomor resmi: 0851-3937-2490). Footer menyebut
-"Managed by Musawara Creative"; entitas produksi PT Setunggal Syifa Semesta.
+manual lewat WhatsApp (nomor resmi: 0851-3937-2490). Entitas produksi PT
+Setunggal Syifa Semesta. (Footer sempat menyebut "Managed by Musawara
+Creative" - dihapus atas permintaan pemilik; jangan tambahkan kembali.)
 
 ## Capabilities and Constraints
 
@@ -92,14 +93,43 @@ manual lewat WhatsApp (nomor resmi: 0851-3937-2490). Footer menyebut
 - Foto produk asli (kemasan + botol): `public/product-hero.png` (800×533)
   dan varian mobile `public/product-hero-480.png` (480w) — nyata, boleh
   dipakai apa adanya.
-- 6 testimoni di `src/lib/config.ts` (`TESTIMONIALS`) **dikonfirmasi
-  pemilik sebagai placeholder/contoh, bukan kutipan asli dari pembeli.**
-  Desain baru harus memperlakukan ini sebagai draft ilustratif, bukan
-  bukti sosial final — jangan menambah detail palsu di sekitarnya (foto
-  profil, jumlah review, tanggal spesifik, dll).
-- Nomor Halal (ID 35410035265411125) dan BPOM (TR266032421) resmi — lihat
-  Constraints.
+- 3 testimoni di `src/lib/config.ts` (`TESTIMONIALS`) **adalah kutipan
+  asli** dari poster marketplace (Slide 7) — Fitri Y (41th), Nurlitha
+  (28th), Thia (39th), semua "Ibu rumah tangga". Placeholder lama (6 nama
+  fiktif) sudah dihapus total atas konfirmasi pemilik. Kalau butuh
+  testimoni tambahan nanti, harus tetap kutipan asli, bukan kembali ke
+  placeholder.
+- Nomor BPOM (TR266032421) dikonfirmasi dari 2 sumber independen (pemilik
+  langsung + dokumen resmi di poster marketplace) — cocok, aman dipakai.
+- Nomor Halal **resmi: ID32110022727310625** (dikonfirmasi pemilik,
+  sesuai dokumen sertifikat asli di poster marketplace Slide 6). Grafis
+  hero carousel slide 2 (`public/hero/slide-2-*.jpg`) masih menampilkan
+  nomor yang KELIRU (ID35410035265411125) karena itu teks yang di-bake ke
+  dalam gambar, bukan teks HTML — **perlu diminta desain ulang ke tim
+  desain**, tidak bisa diperbaiki lewat kode.
+- **Dosis resmi (sumber otoritatif: "Petunjuk Penggunaan NurAlive" PDF dari
+  pemilik, bukan poster marketplace atau FAQ lama)** — 1 pipet penuh = 1 mL,
+  kocok dulu sebelum pakai:
+  - Penggunaan harian: usia 2-12 th → 1 mL 3× sehari; usia >12 th → 1,5 mL
+    3× sehari.
+  - Meredakan batuk: usia 2-12 th → 2,5 mL 3× sehari; usia >12 th → 5 mL
+    3× sehari (angka ini yang cocok dengan poster marketplace Slide 5).
+  - FAQ di `src/lib/config.ts` sudah diupdate mengikuti angka ini,
+    menggantikan framing "tetes" yang lama dan tidak akurat.
+- Komposisi resmi dari PDF yang sama: **80% Black Seed Oil (Habbatussauda,
+  cold-pressed) : 20% Olive Oil** — dipakai di copy situs. Poster
+  marketplace Slide 4 sempat menyebut rasio berbeda (83%:17%); PDF resmi
+  dari pemilik dijadikan sumber utama sesuai instruksi pemilik.
+- 3 testimoni real dari poster marketplace **sudah dipakai** menggantikan
+  placeholder (lihat atas) — dikonfirmasi pemilik.
 - 5 bundle harga resmi dari listing marketplace — lihat Constraints.
+- 8 poster marketplace asli (1200×1200) di `public/marketplace/`, dipakai
+  di section "Tampilan NurAlive di Marketplace".
+- PDF resmi "Petunjuk Penggunaan NurAlive" (dari pemilik, `~/Downloads/
+  Petunjuk Penggunaan Nuralive (3).pdf`) juga menyebut produk pendamping
+  "NurAlive Madu Trigona" yang disarankan dipakai bersama untuk pemulihan
+  batuk — belum ada section untuk produk ini di situs, catat sebagai
+  potensi pengembangan, jangan tambahkan tanpa diminta.
 - 8 aset banner hero carousel (4 slide × desktop 1920×720 + mobile 750×900)
   diambil dari Google Drive tim desain, disimpan di `public/hero/` sebagai
   JPEG. Berisi headline "Jagain Keluarga Indonesia" (#JagaYangJagain),

@@ -10,9 +10,10 @@ export const BRAND = {
   city: "Jakarta, Indonesia",
   csHours: "Senin-Sabtu, 08.00-20.00 WIB",
   bpomNumber: "TR266032421" as string | null,
-  // Sumber: aset resmi tim desain (slide 2 hero carousel) yang menampilkan
-  // logo Halal Indonesia dengan nomor ini secara eksplisit.
-  halalNumber: "ID 35410035265411125" as string | null,
+  // Sumber: dokumen sertifikat Halal resmi (poster marketplace slide 6) -
+  // dikonfirmasi pemilik sebagai nomor yang benar, bukan yang sempat
+  // tertulis di grafis hero carousel (ID35410035265411125, keliru).
+  halalNumber: "ID32110022727310625" as string | null,
 };
 
 export type Pkg = {
@@ -51,7 +52,7 @@ export const PACKAGES: Pkg[] = [
     duration: "±20 hari",
     price: 285_000,
     compareAt: 370_000,
-    perks: ["2 botol 30 ml — cadangan di rumah & tas", "Panduan takaran per usia"],
+    perks: ["2 botol 30 ml, cadangan di rumah & tas", "Panduan takaran per usia"],
     freeShipping: false,
   },
   {
@@ -63,7 +64,7 @@ export const PACKAGES: Pkg[] = [
     price: 417_000,
     compareAt: 555_000,
     perks: [
-      "3 botol 30 ml — stok sebulan",
+      "3 botol 30 ml, stok sebulan",
       "Panduan takaran lengkap sekeluarga",
       "Prioritas konsultasi WA",
     ],
@@ -78,7 +79,7 @@ export const PACKAGES: Pkg[] = [
     price: 810_000,
     compareAt: 1_110_000,
     perks: [
-      "6 botol 30 ml — stok 2 bulan",
+      "6 botol 30 ml, stok 2 bulan",
       "Gratis ongkir seluruh Indonesia",
       "Konsultasi prioritas via WA",
     ],
@@ -93,7 +94,7 @@ export const PACKAGES: Pkg[] = [
     price: 1_530_000,
     compareAt: 2_220_000,
     perks: [
-      "12 botol 30 ml — stok 4 bulan",
+      "12 botol 30 ml, stok 4 bulan",
       "Gratis ongkir seluruh Indonesia",
       "Harga per botol paling hemat",
     ],
@@ -141,7 +142,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     id: "jaga-keluarga",
     desktopSrc: "/hero/slide-1-desktop.jpg",
     mobileSrc: "/hero/slide-1-mobile.jpg",
-    alt: "Jagain Keluarga Indonesia — #JagaYangJagain",
+    alt: "Jagain Keluarga Indonesia, #JagaYangJagain",
   },
   {
     id: "legalitas",
@@ -153,52 +154,35 @@ export const HERO_SLIDES: HeroSlide[] = [
     id: "promo-launching",
     desktopSrc: "/hero/slide-3-desktop.jpg",
     mobileSrc: "/hero/slide-3-mobile.jpg",
-    alt: "Jaga 1000 Rumah Pertama — harga launching Rp150.000 dari Rp185.000",
+    alt: "Jaga 1000 Rumah Pertama, harga launching Rp150.000 dari Rp185.000",
   },
   {
     id: "kanal-beli",
     desktopSrc: "/hero/slide-4-desktop.jpg",
     mobileSrc: "/hero/slide-4-mobile.jpg",
-    alt: "NurAlive tersedia di Shopee, Tokopedia, TikTok Shop, website resmi, dan WhatsApp — pilih toko favoritmu",
+    alt: "NurAlive tersedia di Shopee, Tokopedia, TikTok Shop, website resmi, dan WhatsApp. Pilih toko favoritmu",
   },
 ];
 
+// Testimoni asli dari pembeli (sumber: poster marketplace, folder Drive
+// ".../Marketplace/Poster Marketplace", Slide 7) - bukan placeholder.
+// "Nuralife" pada kutipan pertama dikoreksi jadi "NurAlive" (typo penulis
+// kutipan asli, ejaan brand yang benar), isi kutipan lainnya verbatim.
 export const TESTIMONIALS = [
   {
-    quote: "Anak saya batuk tiap hujan turun. Setiap pagi kami tambahkan satu sendok madu ke NurAlive, dan dia tidur nyenyak lagi.",
-    name: "Rina Andini",
-    role: "Ibu dua anak, Bekasi",
-    segment: "anak",
+    quote: "Awalnya ikhtiar jalur herbal, MaasyaaAllah berkat izin Allah cocok dan berlanjut ke sekian kali penggunaan NurAlive ini. Lebih tenang jg penggunaannya ke anak2.",
+    name: "Fitri Y.",
+    role: "Ibu rumah tangga, 41 tahun",
   },
   {
-    quote: "Kerja di lapangan, tiap hari terpapar debu & asap. Sekarang tenggorokan tidak lagi terasa serak, napas lebih lega.",
-    name: "Dimas Pratama",
-    role: "Supervisor proyek, Jakarta",
-    segment: "polusi",
+    quote: "Sebagai full time Ibu rumah tangga, NurAlive cocok untuk person yang aktivitasnya padat, dan butuh untuk lebih menjaga imunitas.",
+    name: "Nurlitha",
+    role: "Ibu rumah tangga, 28 tahun",
   },
   {
-    quote: "Rasanya agak kuat di awal, tapi setelah dicampur madu, anak‑anak suka dan tidak komplain lagi.",
-    name: "Sari Wahyu",
-    role: "Guru SD, Depok",
-    segment: "anak",
-  },
-  {
-    quote: "Saya dan suami minum tiap pagi sebelum kerja. Badan terasa lebih bertenaga, tidak sering lemah meski agenda padat.",
-    name: "Maya Kurnia",
-    role: "Karyawan swasta, Tangerang",
-    segment: "keluarga",
-  },
-  {
-    quote: "Pengiriman cepat, kemasan cukup tebal. Saya langsung pesan lagi lewat situs karena sangat puas.",
-    name: "Fajar Haris",
-    role: "Wiraswasta, Surabaya",
-    segment: "keluarga",
-  },
-  {
-    quote: "Sudah jadi barang wajib di rumah. Satu botol untuk saya, satu lagi untuk orang tua, praktis dan mudah dipakai.",
-    name: "Nadia Rizka",
-    role: "Apoteker, Bandung",
-    segment: "keluarga",
+    quote: "Alhamdulillah semenjak ada NurAlive anak/suami flu batuk langsung tetes ini, sembuh ga perlu nambah obat obatan lagi, yg penting rutin pemakaiannya.",
+    name: "Thia",
+    role: "Ibu rumah tangga, 39 tahun",
   },
 ];
 
@@ -209,11 +193,11 @@ export const FAQS = [
   },
   {
     q: "Aman untuk anak usia berapa?",
-    a: "Direkomendasikan untuk anak usia 2 tahun ke atas: 2-3 tetes, 2× sehari, dicampur satu sendok madu murni atau air hangat. Untuk anak di bawah 2 tahun, konsultasikan dulu ke dokter.",
+    a: "Direkomendasikan untuk anak usia 2 tahun ke atas. Untuk penggunaan harian: 1 mL, 3× sehari. Untuk meredakan batuk: 2,5 mL, 3× sehari. Untuk anak di bawah 2 tahun, konsultasikan dulu ke dokter. Penggunaan madu sebagai campuran hanya disarankan untuk anak di atas 2 tahun.",
   },
   {
     q: "Bagaimana cara konsumsinya?",
-    a: "Dewasa: 5-10 tetes, 2-3× sehari, langsung diteteskan ke mulut atau dicampur madu/air hangat. Diminum setelah makan. Kocok botol sebelum digunakan.",
+    a: "1 pipet penuh = 1 mL. Kocok dahulu sebelum digunakan, lalu ambil sesuai dosis dengan pipet droper. Untuk penggunaan harian (usia >12 tahun): 1,5 mL, 3× sehari. Untuk meredakan batuk (usia >12 tahun): 5 mL, 3× sehari. Arahkan pipet ke bagian belakang lidah, atau campurkan dengan ½-1 sdm madu murni. Diminum setelah makan.",
   },
   {
     q: "Boleh diminum bersama obat dokter?",

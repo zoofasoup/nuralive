@@ -11,7 +11,7 @@ export default function PengirimanPage() {
       <h2>Pengiriman</h2>
       <ul>
         <li>Pesanan yang masuk sebelum pukul 15.00 WIB (Senin-Sabtu) dikirim di hari yang sama; setelahnya dikirim hari kerja berikutnya.</li>
-        <li>Kami mengirim ke seluruh Indonesia melalui kurir ekspedisi terpercaya. Nomor resi dikirim via WhatsApp begitu paket diserahkan ke kurir.</li>
+        <li>Kami mengirim ke seluruh Indonesia melalui kurir ekspedisi. Nomor resi dikirim via WhatsApp begitu paket diserahkan ke kurir.</li>
         <li>Estimasi tiba: Jabodetabek 1-2 hari, Pulau Jawa 2-3 hari, luar Jawa 3-7 hari kerja.</li>
         <li>Setiap botol dikemas dengan bubble wrap tebal dan kardus khusus anti-pecah.</li>
       </ul>

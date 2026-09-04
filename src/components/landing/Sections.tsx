@@ -1,5 +1,6 @@
 import { PERSONAS, BRAND, PROBLEMS, waLink } from "@/lib/config";
 import Icon, { IconName } from "@/components/Icon";
+import { BpomLogo, HalalIndonesiaLogo, BanggaBuatanIndonesiaLogo } from "@/components/CertLogos";
 
 // Kumpulan section statis landing: urgency, trust, masalah, solusi,
 // komposisi, persona, perbandingan, jaminan.
@@ -86,7 +87,7 @@ export function Problem() {
 const INGREDIENTS = [
   {
     name: "Minyak Habbatussauda",
-    sub: "Nigella sativa — jintan hitam",
+    sub: "Nigella sativa, jintan hitam",
     points: [
       "Mengandung senyawa aktif thymoquinone",
       "Dikenal lama dalam tradisi herbal untuk daya tahan tubuh",
@@ -114,9 +115,10 @@ export function Ingredients() {
           Kebaikan murni dari alam
         </h2>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/80">
-          Hanya dua bahan utama: minyak habbatussauda yang kaya thymoquinone
-          dan minyak zaitun extra-virgin. Kedua bahan ini sudah dipakai secara
-          tradisional sejak ribuan tahun, tanpa tambahan bahan kimia.
+          Hanya dua bahan utama: 80% minyak habbatussauda (cold-pressed,
+          kaya thymoquinone) dan 20% minyak zaitun extra-virgin. Kedua bahan
+          ini sudah dipakai secara tradisional sejak ribuan tahun, tanpa
+          tambahan bahan kimia.
         </p>
         <div className="mt-10 grid gap-px overflow-hidden rounded-xl bg-white/10 md:grid-cols-2">
           {INGREDIENTS.map((ing) => (
@@ -154,7 +156,7 @@ export function ForWho() {
         Satu botol kecil, dipakai seisi rumah
       </h2>
       <p className="mt-3 max-w-xl text-ink-soft">
-        Dari anak usia 2 tahun sampai lansia — cukup diteteskan langsung, atau
+        Dari anak usia 2 tahun sampai lansia, cukup diteteskan langsung atau
         dicampur sesendok madu murni untuk anak-anak.
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
@@ -179,7 +181,7 @@ export function ForWho() {
 
 const COMPARE = [
   { label: "Bahan alami tanpa tambahan kimia", nura: true, sirup: false, madu: true },
-  { label: "Praktis — tinggal tetes, tanpa takar sendok", nura: true, sirup: false, madu: false },
+  { label: "Praktis, tinggal tetes tanpa takar sendok", nura: true, sirup: false, madu: false },
   { label: "Satu produk untuk anak 2th s.d. lansia", nura: true, sirup: false, madu: true },
   { label: "Kandungan habbatussauda + zaitun EV terstandar", nura: true, sirup: false, madu: false },
   { label: "Untuk pemeliharaan harian, bukan hanya saat sakit", nura: true, sirup: false, madu: true },
@@ -244,17 +246,24 @@ export function Comparison() {
 }
 
 export function Guarantee() {
-  const certs: { title: string; desc: string }[] = [];
-  if (BRAND.bpomNumber) {
-    certs.push({ title: "BPOM Terdaftar", desc: BRAND.bpomNumber });
-  }
-  if (BRAND.halalNumber) {
-    certs.push({ title: "Halal Indonesia", desc: BRAND.halalNumber });
-  }
-
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid grid-cols-2 gap-6 rounded-xl border border-line bg-paper p-8 sm:grid-cols-3 sm:p-10">
+        <div className="flex flex-col items-center gap-2 text-center">
+          <BpomLogo className="h-14 w-auto" />
+          {BRAND.bpomNumber && <p className="text-xs text-ink-soft">{BRAND.bpomNumber}</p>}
+        </div>
+        <div className="flex flex-col items-center gap-2 text-center">
+          <HalalIndonesiaLogo className="h-14 w-auto" />
+          {BRAND.halalNumber && <p className="text-xs text-ink-soft">{BRAND.halalNumber}</p>}
+        </div>
+        <div className="col-span-2 flex flex-col items-center gap-2 text-center sm:col-span-1">
+          <BanggaBuatanIndonesiaLogo className="h-14 w-auto" />
+          <p className="text-xs text-ink-soft">Diproduksi {BRAND.company}</p>
+        </div>
+      </div>
+
+      <div className="mt-6 grid gap-6 sm:grid-cols-2">
         <div className="rounded-xl border border-line bg-paper p-8">
           <Icon name="shield" className="h-8 w-8 text-forest" aria-hidden />
           <h3 className="font-display mt-4 text-xl font-bold text-ink">
@@ -262,7 +271,7 @@ export function Guarantee() {
           </h3>
           <p className="mt-2 text-sm text-ink-soft">
             Botol pecah di jalan atau paket tidak sesuai? Foto & kirim ke CS
-            dalam 1×24 jam — kami kirim penggantinya tanpa ribet.
+            dalam 1×24 jam, kami kirim penggantinya tanpa ribet.
           </p>
         </div>
         <div className="rounded-xl border border-line bg-paper p-8">
@@ -275,14 +284,6 @@ export function Guarantee() {
             diawasi di setiap batch.
           </p>
         </div>
-        {certs.length > 0 &&
-          certs.map((c) => (
-            <div key={c.title} className="rounded-xl border border-line bg-paper p-8">
-              <Icon name="badge" className="h-8 w-8 text-forest" aria-hidden />
-              <h3 className="font-display mt-4 text-xl font-bold text-ink">{c.title}</h3>
-              <p className="mt-2 text-sm text-ink-soft">{c.desc}</p>
-            </div>
-          ))}
       </div>
 
       <a
@@ -299,7 +300,7 @@ export function Guarantee() {
             </h3>
             <p className="mt-2 text-sm text-ink-soft">
               CS kami menjawab pertanyaan takaran, kondisi khusus, dan cara
-              konsumsi — tanpa harus beli dulu. {BRAND.csHours}.
+              konsumsi, tanpa harus beli dulu. {BRAND.csHours}.
             </p>
           </div>
         </div>

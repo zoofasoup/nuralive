@@ -10,7 +10,7 @@ export default function Pricing() {
           Pilih sesuai kebutuhan rumah
         </h2>
         <p className="mx-auto mt-3 max-w-lg text-center text-ink-soft">
-          Semua paket dikirim dari gudang kami — bukan dropship. Harga sudah
+          Semua paket dikirim dari gudang kami, bukan dropship. Harga sudah
           termasuk kemasan aman anti-pecah.
         </p>
 

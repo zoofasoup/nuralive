@@ -43,7 +43,7 @@ export default function FloatingCTA() {
           href="/#paket"
           className="block rounded-lg bg-clay py-3.5 text-center text-sm font-bold text-white shadow-lg transition hover:bg-clay-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-deep"
         >
-          Beli Sekarang — mulai {formatRupiah(CHEAPEST_PRICE)}
+          Beli Sekarang · mulai {formatRupiah(CHEAPEST_PRICE)}
         </Link>
       </div>
     </>

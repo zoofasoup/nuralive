@@ -42,7 +42,7 @@ export default function Testimonials() {
         </div>
       )}
 
-      <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-8 sm:grid-cols-2">
         {otherTestimonials.map((t) => (
           <figure key={t.name} className="border-t border-line pt-5">
             <Stars />
