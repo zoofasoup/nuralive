@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     locale: "id_ID",
     type: "website",
   },
+  other: {
+    "facebook-domain-verification": "10k2y16381iwz7o5ekp5pxag05rcav",
+  },
 };
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
