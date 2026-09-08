@@ -26,6 +26,7 @@ export type Pkg = {
   compareAt: number; // harga normal untuk coretan
   perks: string[];
   freeShipping: boolean;
+  image: string; // poster bundling asli (folder Drive "Bundling SKU/Opsi 1")
 };
 
 // Harga asli dari listing marketplace (Shopee/Tokopedia/TikTok Shop) -
@@ -43,6 +44,7 @@ export const PACKAGES: Pkg[] = [
     compareAt: 185_000,
     perks: ["1 botol 30 ml", "Panduan takaran per usia"],
     freeShipping: false,
+    image: "/bundles/bundle-1.jpg",
   },
   {
     id: "isi-2",
@@ -54,6 +56,7 @@ export const PACKAGES: Pkg[] = [
     compareAt: 370_000,
     perks: ["2 botol 30 ml, cadangan di rumah & tas", "Panduan takaran per usia"],
     freeShipping: false,
+    image: "/bundles/bundle-2.jpg",
   },
   {
     id: "isi-3",
@@ -69,6 +72,7 @@ export const PACKAGES: Pkg[] = [
       "Prioritas konsultasi WA",
     ],
     freeShipping: false,
+    image: "/bundles/bundle-3.jpg",
   },
   {
     id: "isi-6",
@@ -84,6 +88,7 @@ export const PACKAGES: Pkg[] = [
       "Konsultasi prioritas via WA",
     ],
     freeShipping: true,
+    image: "/bundles/bundle-6.jpg",
   },
   {
     id: "isi-12",
@@ -99,6 +104,7 @@ export const PACKAGES: Pkg[] = [
       "Harga per botol paling hemat",
     ],
     freeShipping: true,
+    image: "/bundles/bundle-12.jpg",
   },
 ];
 
