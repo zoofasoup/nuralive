@@ -21,8 +21,8 @@ export default function Pricing() {
         </div>
 
         <p className="mt-8 text-center text-sm text-ink-soft">
-          COD (bayar di tempat) tersedia langsung di Shopee &amp; Tokopedia,
-          atau tanya dulu via WhatsApp.
+          Tersedia langsung di Shopee &amp; Tokopedia, atau tanya dulu via
+          WhatsApp.
         </p>
       </div>
     </section>

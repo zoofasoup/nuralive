@@ -11,7 +11,6 @@ export function UrgencyBar() {
   // beku selamanya; jangan tampilkan sesuatu yang terlihat live padahal tidak.
   const items: string[] = [
     "Kirim seluruh Indonesia",
-    "COD tersedia",
     "Order sebelum 15.00 WIB dikirim hari ini",
   ];
 
@@ -36,7 +35,6 @@ export function UrgencyBar() {
 const TRUST = [
   { icon: "leaf" as IconName, title: "100% Bahan Alami", desc: "Habbatussauda & zaitun EV, tanpa pengawet" },
   { icon: "truck" as IconName, title: "Kirim Seluruh Indonesia", desc: "Same-day dispatch sebelum 15.00 WIB" },
-  { icon: "cash" as IconName, title: "COD Tersedia", desc: "Bayar di tempat saat paket tiba" },
   { icon: "chat" as IconName, title: "Konsultasi Gratis", desc: `CS ahli via WhatsApp, ${BRAND.csHours}` },
 ];
 
@@ -44,7 +42,7 @@ export function TrustBar() {
   return (
     <section className="border-y border-line bg-cream">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid grid-cols-1 divide-y divide-line sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
+        <div className="grid grid-cols-1 divide-y divide-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           {TRUST.map((t) => (
             <div key={t.title} className="flex items-start gap-3 py-6 sm:px-6 sm:first:pl-0 sm:last:pr-0">
               <Icon name={t.icon} className="h-6 w-6 shrink-0 text-forest" aria-hidden />

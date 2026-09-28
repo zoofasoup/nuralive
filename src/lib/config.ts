@@ -192,6 +192,42 @@ export const TESTIMONIALS = [
   },
 ];
 
+// Takaran resmi dari PDF "Petunjuk Penggunaan NurAlive" milik pemilik -
+// sumber otoritatif, bukan poster marketplace. 1 pipet penuh = 1 mL.
+// Jangan ubah angka di sini tanpa mengecek ulang ke PDF tersebut.
+export const DOSAGE = {
+  unit: "1 pipet penuh = 1 mL",
+  rows: [
+    { usia: "Anak 2-12 tahun", harian: "1 mL, 3× sehari", batuk: "2,5 mL, 3× sehari" },
+    { usia: "Di atas 12 tahun", harian: "1,5 mL, 3× sehari", batuk: "5 mL, 3× sehari" },
+  ],
+  steps: [
+    {
+      title: "Kocok dulu",
+      desc: "Minyak habbatussauda dan zaitun perlu tercampur rata sebelum diambil.",
+    },
+    {
+      title: "Ambil dengan pipet",
+      desc: "Takar sesuai usia, lalu arahkan ke bagian belakang lidah.",
+    },
+    {
+      title: "Boleh dicampur madu",
+      desc: "Rasanya khas dan cukup kuat. Campur ½-1 sdm madu murni untuk anak di atas 2 tahun.",
+    },
+  ],
+  note: "Diminum setelah makan. Untuk anak di bawah 2 tahun, konsultasikan dulu ke dokter.",
+};
+
+// Isi paket yang benar-benar diterima pembeli - dipakai di halaman iklan
+// supaya penawarannya konkret, bukan cuma harga.
+export const DELIVERABLES = [
+  { icon: "drop", title: "1 botol NurAlive 30 ml", desc: "Cukup untuk ±10 hari pemakaian" },
+  { icon: "kid", title: "Panduan takaran per usia", desc: "Dari anak 2 tahun sampai lansia, satu botol yang sama" },
+  { icon: "chat", title: "Konsultasi gratis via WhatsApp", desc: "Tanya dosis atau kondisi khusus, tanpa harus beli dulu" },
+  { icon: "shield", title: "Garansi botol pecah atau rusak", desc: "Kirim foto maksimal 1×24 jam, kami ganti tanpa biaya" },
+  { icon: "truck", title: "Dikemas anti-pecah", desc: "Bubble wrap tebal dan kardus khusus, dikirim dari gudang sendiri" },
+] as const;
+
 export const FAQS = [
   {
     q: "Berapa lama efeknya mulai terasa?",
@@ -207,15 +243,15 @@ export const FAQS = [
   },
   {
     q: "Boleh diminum bersama obat dokter?",
-    a: "NurAlive adalah suplemen herbal, bukan pengganti obat. Beri jarak 1-2 jam dari obat dokter, dan konsultasikan ke dokter bila Anda dalam pengobatan rutin.",
+    a: "NurAlive adalah suplemen herbal, bukan pengganti obat. Beri jarak 1-2 jam dari obat dokter, dan konsultasikan ke dokter bila kamu sedang dalam pengobatan rutin.",
   },
   {
     q: "Apakah ada efek samping?",
     a: "Terbuat dari bahan alami. Rasa minyak habbatussauda memang khas dan cukup kuat di awal - mencampurnya dengan madu murni membuatnya jauh lebih nyaman. Hentikan pemakaian bila muncul reaksi alergi.",
   },
   {
-    q: "Bagaimana pengiriman dan COD?",
-    a: "Pesanan sebelum pukul 15.00 WIB dikirim di hari yang sama (Senin-Sabtu). COD tersedia di semua area jangkauan kurir. Nomor resi dikirim via WhatsApp.",
+    q: "Bagaimana pengiriman pesanan?",
+    a: "Pesanan sebelum pukul 15.00 WIB dikirim di hari yang sama (Senin-Sabtu). Nomor resi dikirim via WhatsApp.",
   },
   {
     q: "Ada garansi kalau paket rusak?",

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: `%s - ${BRAND.name}`,
   },
   description:
-    "Suplemen tetes herbal berbasis minyak habbatussauda dan zaitun extra virgin. Membantu meredakan batuk dan memelihara daya tahan tubuh sekeluarga. Kirim seluruh Indonesia, COD tersedia.",
+    "Suplemen tetes herbal berbasis minyak habbatussauda dan zaitun extra virgin. Membantu meredakan batuk dan memelihara daya tahan tubuh sekeluarga. Kirim seluruh Indonesia.",
   openGraph: {
     title: `${BRAND.name} - Tetes Herbal untuk Napas Lega Sekeluarga`,
     description:

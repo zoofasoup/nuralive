@@ -16,12 +16,6 @@ export default function PengirimanPage() {
         <li>Setiap botol dikemas dengan bubble wrap tebal dan kardus khusus anti-pecah.</li>
       </ul>
 
-      <h2>COD (Bayar di Tempat)</h2>
-      <ul>
-        <li>COD tersedia di area jangkauan kurir. Siapkan uang pas sesuai total pesanan.</li>
-        <li>Paket COD yang ditolak tanpa alasan dapat memengaruhi kemampuan COD di pesanan berikutnya.</li>
-      </ul>
-
       <h2>Retur &amp; Penggantian</h2>
       <ul>
         <li>Botol pecah, bocor, atau paket tidak sesuai pesanan: kirim foto/video ke WhatsApp CS ({BRAND.whatsappDisplay}) maksimal 1×24 jam setelah paket diterima - kami kirim penggantinya tanpa biaya.</li>
