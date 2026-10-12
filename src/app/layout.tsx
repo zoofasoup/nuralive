@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 // Pixel ID bukan rahasia (selalu terlihat di client JS) - hardcode sebagai
 // default supaya aktif tanpa bergantung pada env var di dashboard hosting.
-const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || "2623066174816231";
+const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || "2199678544296617";
 
 export default function RootLayout({
   children,
