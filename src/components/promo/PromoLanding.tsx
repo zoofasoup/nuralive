@@ -14,17 +14,17 @@ import Icon, { IconName } from "@/components/Icon";
 import Testimonials from "@/components/landing/Testimonials";
 import { Comparison } from "@/components/landing/Sections";
 import Faq from "@/components/landing/Faq";
-import PromoWhatsAppButton from "@/components/promo/PromoWhatsAppButton";
+import TrackedLink from "@/components/TrackedLink";
+import { orderParams, type Channel } from "@/lib/meta-track";
 
 // Badan halaman iklan yang dipakai bersama oleh semua angle. Yang berbeda
 // per angle hanya bagian yang menempel pada janji iklan (H1, subcopy,
 // seksi masalah, CTA penutup); penawaran, bukti, legalitas, dan FAQ sama
 // supaya tidak ada dua versi fakta yang bisa berbeda.
 //
-// WhatsApp adalah CTA utama dan satu-satunya yang dilacak fbq Lead;
-// marketplace sengaja tidak ditawarkan di sini supaya pilihan tidak
-// bercabang. Angle mana yang menghasilkan lead terbaca dari event_source_url
-// yang dikirim PromoWhatsAppButton ke CAPI, jadi tidak perlu parameter lain.
+// Dua CTA: WhatsApp (utama) dan webstore resmi. Keduanya menembak Lead
+// (pixel + CAPI), dibedakan lewat parameter channel/placement; angle ikut
+// dikirim sebagai parameter supaya hasil tiap landing page bisa dipisah.
 // Tanpa navbar/footer/ticker situs utama supaya pengunjung tidak teralihkan.
 
 const OFFER = PACKAGES.find((p) => p.id === "isi-1")!;
@@ -40,6 +40,16 @@ export default function PromoLanding({ angle }: { angle: PromoAngle }) {
   const waHref = waLink(
     `Halo NurAlive, saya mau order Paket Coba (1 botol) harga promo ${formatRupiah(OFFER.price)} (${angle.waContext}).`
   );
+  const lead = (channel: Channel, placement: string) => ({
+    ...orderParams({
+      channel,
+      placement,
+      value: OFFER.price,
+      packageId: OFFER.id,
+      contentName: OFFER.label,
+    }),
+    angle: angle.id,
+  });
 
   return (
     // Halaman iklan ini dipakai hampir seluruhnya dari HP, jadi di desktop
@@ -80,23 +90,24 @@ export default function PromoLanding({ angle }: { angle: PromoAngle }) {
             </div>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <PromoWhatsAppButton
+              <TrackedLink
                 href={waHref}
-                value={OFFER.price}
+                event="Lead"
+                params={lead("whatsapp", "hero")}
                 className="flex items-center justify-center gap-2.5 rounded-lg bg-forest px-6 py-4 text-base font-bold whitespace-nowrap text-white shadow-lg transition hover:bg-forest-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-deep"
               >
                 <Icon name="whatsapp" className="h-5 w-5" aria-hidden />
                 Pesan via WhatsApp
-              </PromoWhatsAppButton>
-              <a
+              </TrackedLink>
+              <TrackedLink
                 href={WEBSTORE.url}
-                target="_blank"
-                rel="noopener"
+                event="Lead"
+                params={lead("webstore", "hero")}
                 className="flex items-center justify-center gap-2.5 rounded-lg border-2 border-forest px-6 py-4 text-base font-bold whitespace-nowrap text-forest-deep transition hover:bg-forest/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-deep"
               >
                 <Icon name="cart" className="h-5 w-5" aria-hidden />
                 Beli di Website Resmi
-              </a>
+              </TrackedLink>
             </div>
           </div>
 
@@ -285,35 +296,37 @@ export default function PromoLanding({ angle }: { angle: PromoAngle }) {
           {formatRupiah(OFFER.compareAt - OFFER.price)}.
         </p>
         <div className="mx-auto mt-6 flex max-w-lg flex-col items-stretch gap-3 sm:flex-row sm:justify-center">
-          <PromoWhatsAppButton
+          <TrackedLink
             href={waHref}
-            value={OFFER.price}
+            event="Lead"
+            params={lead("whatsapp", "final-cta")}
             className="flex items-center justify-center gap-2.5 rounded-lg bg-white px-6 py-4 text-base font-bold whitespace-nowrap text-forest-deep shadow-lg transition hover:bg-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             <Icon name="whatsapp" className="h-5 w-5" aria-hidden />
             Pesan via WhatsApp
-          </PromoWhatsAppButton>
-          <a
+          </TrackedLink>
+          <TrackedLink
             href={WEBSTORE.url}
-            target="_blank"
-            rel="noopener"
+            event="Lead"
+            params={lead("webstore", "final-cta")}
             className="flex items-center justify-center gap-2.5 rounded-lg border-2 border-white/70 px-6 py-4 text-base font-bold whitespace-nowrap text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             <Icon name="cart" className="h-5 w-5" aria-hidden />
             Beli di Website Resmi
-          </a>
+          </TrackedLink>
         </div>
       </section>
 
       {/* MOBILE STICKY CTA */}
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-paper/95 p-3 backdrop-blur sm:hidden">
-        <PromoWhatsAppButton
+        <TrackedLink
           href={waHref}
-          value={OFFER.price}
+          event="Lead"
+          params={lead("whatsapp", "sticky")}
           className="flex items-center justify-center gap-2 rounded-lg bg-clay py-3.5 text-center text-sm font-bold text-white shadow-lg transition hover:bg-clay-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-deep"
         >
           Pesan Sekarang · {formatRupiah(OFFER.price)}
-        </PromoWhatsAppButton>
+        </TrackedLink>
       </div>
       <div className="h-20 sm:hidden" aria-hidden />
     </main>

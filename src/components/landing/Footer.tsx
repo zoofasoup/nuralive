@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BRAND, waLink } from "@/lib/config";
 import Logo from "@/components/Logo";
+import TrackedLink from "@/components/TrackedLink";
 
 export default function Footer() {
   return (
@@ -32,14 +33,14 @@ export default function Footer() {
           <p className="text-xs font-bold tracking-widest text-ink uppercase">Bantuan</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             <li>
-              <a
+              <TrackedLink
                 href={waLink("Halo NurAlive, saya butuh bantuan.")}
-                target="_blank"
-                rel="noopener"
+                event="Contact"
+                params={{ channel: "whatsapp", placement: "footer" }}
                 className="text-ink-soft hover:text-forest"
               >
                 WhatsApp CS: {BRAND.whatsappDisplay}
-              </a>
+              </TrackedLink>
             </li>
             <li className="text-ink-soft">{BRAND.csHours}</li>
             <li><Link href="/pengiriman" className="text-ink-soft hover:text-forest">Pengiriman &amp; Retur</Link></li>

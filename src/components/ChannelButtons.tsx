@@ -1,4 +1,6 @@
-import { SALES_CHANNELS, waLink } from "@/lib/config";
+import { SALES_CHANNELS, waLink, type Pkg, type SalesChannel } from "@/lib/config";
+import { orderParams, type Channel } from "@/lib/meta-track";
+import TrackedLink from "@/components/TrackedLink";
 
 // Glyph merek resmi dari Simple Icons (CC0) - dipakai secara nominatif untuk
 // menunjukkan di kanal mana produk dijual, selalu disertai label teks nama
@@ -79,44 +81,63 @@ const CHANNEL_STYLE: Record<string, string> = {
   website: "border-forest/40 text-forest-deep hover:bg-forest/10",
 };
 
+// id kanal di SALES_CHANNELS -> nama kanal di event Meta. "website" diganti
+// "webstore" supaya di Events Manager tidak ambigu (semua ini juga "website").
+const CHANNEL_KEY: Record<SalesChannel["id"], Channel> = {
+  shopee: "shopee",
+  tokopedia: "tokopedia",
+  tiktok: "tiktok",
+  website: "webstore",
+};
+
 /**
  * Baris tombol "beli di mana saja" - situs ini adalah hub, bukan checkout
- * sendiri. `context` disisipkan ke pesan WhatsApp supaya CS tahu produk/paket
- * apa yang sedang dilihat pengunjung.
+ * sendiri. Nama paket disisipkan ke pesan WhatsApp supaya CS tahu paket apa
+ * yang sedang dilihat pengunjung, dan setiap klik menembak Lead berisi paket
+ * + nilainya (satu-satunya tempat di situs utama yang tahu paket mana).
  */
 export default function ChannelButtons({
-  context,
+  pkg,
   className = "",
 }: {
-  context: string;
+  pkg: Pkg;
   className?: string;
 }) {
+  const lead = (channel: Channel) =>
+    orderParams({
+      channel,
+      placement: "pricing-card",
+      value: pkg.price,
+      packageId: pkg.id,
+      contentName: pkg.label,
+    });
+
   return (
     <div className={`grid grid-cols-2 gap-2.5 ${className}`}>
       {SALES_CHANNELS.map((c) => {
         const Icon = ICON[c.id];
         return (
-          <a
+          <TrackedLink
             key={c.id}
             href={c.url}
-            target="_blank"
-            rel="noopener"
+            event="Lead"
+            params={lead(CHANNEL_KEY[c.id])}
             className={`flex items-center justify-center gap-2 rounded-lg border-2 bg-paper px-3 py-3 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-deep ${CHANNEL_STYLE[c.id]}`}
           >
             <Icon />
             {c.label}
-          </a>
+          </TrackedLink>
         );
       })}
-      <a
-        href={waLink(`Halo NurAlive, saya mau tanya/pesan ${context} lewat WhatsApp.`)}
-        target="_blank"
-        rel="noopener"
+      <TrackedLink
+        href={waLink(`Halo NurAlive, saya mau tanya/pesan ${pkg.label} lewat WhatsApp.`)}
+        event="Lead"
+        params={lead("whatsapp")}
         className="col-span-full flex items-center justify-center gap-2 rounded-lg border-2 border-[#25D366]/30 bg-paper px-3 py-3 text-sm font-bold text-[#148543] transition hover:bg-[#25D366]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-deep"
       >
         <WhatsAppIcon />
         WhatsApp
-      </a>
+      </TrackedLink>
     </div>
   );
 }

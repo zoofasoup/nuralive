@@ -45,7 +45,7 @@ export default function PricingCard({ pkg, highlight }: { pkg: Pkg; highlight: b
             revealed ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
         >
-          <ChannelButtons context={pkg.label} className="w-full max-w-[220px] grid-cols-1!" />
+          <ChannelButtons pkg={pkg} className="w-full max-w-[220px] grid-cols-1!" />
         </div>
 
         <div

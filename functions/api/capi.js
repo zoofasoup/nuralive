@@ -10,6 +10,11 @@
 const PIXEL_ID = "2199678544296617";
 const GRAPH_API_VERSION = "v21.0";
 
+// Endpoint ini publik tanpa autentikasi, jadi siapa pun bisa mem-POST ke
+// sini. Daftar putih nama event menjaga pixel dari event buatan orang lain;
+// tambahkan event baru DI SINI bersamaan dengan src/lib/meta-track.ts.
+const ALLOWED_EVENTS = new Set(["Lead", "Contact"]);
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -20,10 +25,15 @@ export async function onRequestPost(context) {
     return Response.json({ error: "invalid JSON body" }, { status: 400 });
   }
 
-  const { event_name, event_id, event_source_url, fbp, fbc, custom_data } = body || {};
+  const { event_name, event_id, event_source_url, fbp, fbc, custom_data, test_event_code } =
+    body || {};
 
   if (!event_name || !event_id) {
     return Response.json({ error: "event_name and event_id are required" }, { status: 400 });
+  }
+
+  if (!ALLOWED_EVENTS.has(event_name)) {
+    return Response.json({ error: "event_name not allowed" }, { status: 400 });
   }
 
   const userData = {
@@ -45,6 +55,9 @@ export async function onRequestPost(context) {
         ...(custom_data ? { custom_data } : {}),
       },
     ],
+    // Hanya terisi saat QA lewat Events Manager > Test Events; event dengan
+    // kode ini tidak dihitung ke data produksi.
+    ...(test_event_code ? { test_event_code } : {}),
   };
 
   const metaRes = await fetch(

@@ -1,5 +1,6 @@
 import { PERSONAS, BRAND, PROBLEMS, waLink } from "@/lib/config";
 import Icon, { IconName } from "@/components/Icon";
+import TrackedLink from "@/components/TrackedLink";
 import { BpomLogo, HalalIndonesiaLogo, BanggaBuatanIndonesiaLogo } from "@/components/CertLogos";
 
 // Kumpulan section statis landing: urgency, trust, masalah, solusi,
@@ -284,10 +285,10 @@ export function Guarantee() {
         </div>
       </div>
 
-      <a
+      <TrackedLink
         href={waLink("Halo NurAlive, saya mau tanya-tanya dulu sebelum beli.")}
-        target="_blank"
-        rel="noopener"
+        event="Contact"
+        params={{ channel: "whatsapp", placement: "guarantee" }}
         className="mt-6 flex flex-col items-start justify-between gap-4 rounded-xl border border-line bg-cream p-8 transition hover:border-forest sm:flex-row sm:items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-deep"
       >
         <div className="flex items-start gap-4">
@@ -305,7 +306,7 @@ export function Guarantee() {
         <span className="shrink-0 rounded-lg bg-forest px-5 py-3 text-sm font-bold text-white">
           Chat WhatsApp
         </span>
-      </a>
+      </TrackedLink>
     </section>
   );
 }
