@@ -7,7 +7,7 @@
 // The browser should also fire the matching `fbq('track', ...)` pixel call
 // with the SAME event_id so Meta dedupes the two into one event.
 
-const PIXEL_ID = "2623066174816231";
+const PIXEL_ID = "2199678544296617";
 const GRAPH_API_VERSION = "v21.0";
 
 export async function onRequestPost(context) {
