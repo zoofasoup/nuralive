@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { HERO_SLIDES } from "@/lib/config";
 import Icon from "@/components/Icon";
-import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 
 const AUTOPLAY_MS = 6000;
 const SWIPE_THRESHOLD_PX = 40;
@@ -104,7 +103,17 @@ export default function HeroCarousel() {
               i === index ? "opacity-100" : "pointer-events-none opacity-0"
             }`}
           >
-            <PhotoPlaceholder className="h-full w-full" />
+            <picture>
+              <source media="(min-width: 640px)" srcSet={slide.desktopSrc} />
+              <img
+                src={slide.mobileSrc}
+                alt={slide.alt}
+                className="h-full w-full object-cover"
+                loading={i === 0 ? "eager" : "lazy"}
+                fetchPriority={i === 0 ? "high" : "auto"}
+                draggable={false}
+              />
+            </picture>
           </Link>
         ))}
       </div>

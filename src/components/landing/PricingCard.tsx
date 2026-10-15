@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Pkg, formatRupiah } from "@/lib/config";
 import ChannelButtons from "@/components/ChannelButtons";
 import Icon from "@/components/Icon";
-import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 
 // Foto bundling di-blur saat hover (desktop) atau tap pertama (mobile),
 // menyingkap pilihan toko di atasnya - menggantikan baris ChannelButtons
@@ -34,8 +34,12 @@ export default function PricingCard({ pkg, highlight }: { pkg: Pkg; highlight: b
         onClick={() => setRevealed((r) => !r)}
         className="group relative aspect-square w-full cursor-pointer overflow-hidden rounded-lg bg-cream"
       >
-        <PhotoPlaceholder
-          className={`absolute inset-0 transition duration-300 ease-out group-hover:scale-105 group-hover:blur-sm group-focus-within:scale-105 group-focus-within:blur-sm ${
+        <Image
+          src={pkg.image}
+          alt={`Poster bundling ${pkg.label}`}
+          fill
+          sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
+          className={`object-cover transition duration-300 ease-out group-hover:scale-105 group-hover:blur-sm group-focus-within:scale-105 group-focus-within:blur-sm ${
             revealed ? "scale-105 blur-sm" : ""
           }`}
         />

@@ -1,8 +1,6 @@
-import PhotoPlaceholder from "@/components/PhotoPlaceholder";
-
 const POSTERS = [
   {
-    src: "/marketplace/poster-1.jpg",
+    src: "/retouched/marketplace/poster-1.jpg",
     alt: "Kemasan NurAlive lengkap dengan Free Konsultasi, Free Ongkir, dan sertifikasi Official Store, BPOM, Halal",
   },
   {
@@ -30,7 +28,7 @@ const POSTERS = [
     alt: "Testimoni pengguna NurAlive",
   },
   {
-    src: "/marketplace/poster-8.jpg",
+    src: "/retouched/marketplace/poster-8.jpg",
     alt: "Ajakan memesan NurAlive sekarang - Free Konsultasi, Free Ongkir",
   },
 ];
@@ -49,10 +47,15 @@ export default function MarketplaceGallery() {
       </div>
 
       <div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:px-[max(1.5rem,calc((100vw-1152px)/2))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {POSTERS.map((p) => (
-          <PhotoPlaceholder
+        {POSTERS.map((p, i) => (
+          <img
             key={p.src}
-            className="aspect-square w-[78vw] shrink-0 snap-center rounded-xl border border-line sm:w-[320px]"
+            src={p.src}
+            alt={p.alt}
+            width={1200}
+            height={1200}
+            loading={i < 2 ? "eager" : "lazy"}
+            className="aspect-square w-[78vw] shrink-0 snap-center rounded-xl border border-line object-cover sm:w-[320px]"
           />
         ))}
       </div>

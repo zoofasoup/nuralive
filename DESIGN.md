@@ -138,9 +138,12 @@ appropriate for their form.
   use `Icon.tsx`.
 - **Don't** use a gradient fill on text or buttons — every fill is flat.
 - **Don't** show a certification number that isn't real — both are real now
-  (`BRAND.bpomNumber` = TR266032421, `BRAND.halalNumber` = ID
-  35410035265411125). The rule that matters going forward: never hardcode
-  a *new* cert/registration number without the owner confirming it first.
+  (`BRAND.bpomNumber` = TR266032421, `BRAND.halalNumber` =
+  ID32110022727310625, matching the Halal certificate itself). The rule that
+  matters going forward: never hardcode a *new* cert/registration number
+  without the owner confirming it first, and never place artwork that has a
+  number baked into the image without checking that number against
+  `BRAND`.
 - **Don't** fabricate live stock/order counters — `UrgencyBar` intentionally
   only states evergreen shipping facts, not numbers that would freeze
   forever on this static-export site.

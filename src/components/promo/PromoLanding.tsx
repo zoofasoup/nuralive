@@ -1,4 +1,4 @@
-import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import Image from "next/image";
 import {
   BRAND,
   PACKAGES,
@@ -111,7 +111,16 @@ export default function PromoLanding({ angle }: { angle: PromoAngle }) {
             </div>
           </div>
 
-          <PhotoPlaceholder className="aspect-[4/3] w-full rounded-xl" />
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-cream">
+            <Image
+              src="/product-hero.png"
+              alt="Kemasan dan botol NurAlive, tetes herbal habbatussauda dan zaitun"
+              fill
+              sizes="(min-width: 768px) 700px, 90vw"
+              className="object-contain p-6"
+              priority
+            />
+          </div>
         </div>
       </section>
 
@@ -235,7 +244,7 @@ export default function PromoLanding({ angle }: { angle: PromoAngle }) {
         <p className="mt-4 text-sm text-ink-soft">{DOSAGE.note}</p>
       </section>
 
-      <Comparison />
+      <Comparison set={angle.comparison} />
 
       {/* ISI PAKET - penawaran dibuat konkret, bukan cuma angka harga. */}
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24">

@@ -7,7 +7,10 @@ export const BRAND = {
   whatsapp: "6285139372490",
   whatsappDisplay: "0851-3937-2490",
   company: "PT Setunggal Syifa Semesta",
-  city: "Jakarta, Indonesia",
+  // Sesuai alamat badan usaha di sertifikat Halal dan surat izin edar BPOM
+  // (Ruko Emerald Blok EB 1 No. 28, Medansatria, Kota Bekasi). Sebelumnya
+  // "Jakarta, Indonesia", yang tidak cocok dengan satu pun dokumen legal.
+  city: "Kota Bekasi, Jawa Barat",
   csHours: "Senin-Sabtu, 08.00-20.00 WIB",
   bpomNumber: "TR266032421" as string | null,
   // Sumber: dokumen sertifikat Halal resmi (poster marketplace slide 6) -
@@ -44,7 +47,7 @@ export const PACKAGES: Pkg[] = [
     compareAt: 185_000,
     perks: ["1 botol 30 ml", "Panduan takaran per usia"],
     freeShipping: false,
-    image: "/bundles/bundle-1.jpg",
+    image: "/retouched/bundles/bundle-1.jpg",
   },
   {
     id: "isi-2",
@@ -56,7 +59,7 @@ export const PACKAGES: Pkg[] = [
     compareAt: 370_000,
     perks: ["2 botol 30 ml, cadangan di rumah & tas", "Panduan takaran per usia"],
     freeShipping: false,
-    image: "/bundles/bundle-2.jpg",
+    image: "/retouched/bundles/bundle-2.jpg",
   },
   {
     id: "isi-3",
@@ -72,7 +75,7 @@ export const PACKAGES: Pkg[] = [
       "Prioritas konsultasi WA",
     ],
     freeShipping: false,
-    image: "/bundles/bundle-3.jpg",
+    image: "/retouched/bundles/bundle-3.jpg",
   },
   {
     id: "isi-6",
@@ -88,7 +91,7 @@ export const PACKAGES: Pkg[] = [
       "Konsultasi prioritas via WA",
     ],
     freeShipping: true,
-    image: "/bundles/bundle-6.jpg",
+    image: "/retouched/bundles/bundle-6.jpg",
   },
   {
     id: "isi-12",
@@ -104,7 +107,7 @@ export const PACKAGES: Pkg[] = [
       "Harga per botol paling hemat",
     ],
     freeShipping: true,
-    image: "/bundles/bundle-12.jpg",
+    image: "/retouched/bundles/bundle-12.jpg",
   },
 ];
 
@@ -152,8 +155,8 @@ export const HERO_SLIDES: HeroSlide[] = [
   },
   {
     id: "legalitas",
-    desktopSrc: "/hero/slide-2-desktop.jpg",
-    mobileSrc: "/hero/slide-2-mobile.jpg",
+    desktopSrc: "/retouched/hero/slide-2-desktop.jpg",
+    mobileSrc: "/retouched/hero/slide-2-mobile.jpg",
     alt: "Terdaftar BPOM, bersertifikat Halal Indonesia, dan konsultasi gratis",
   },
   {

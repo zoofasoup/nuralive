@@ -178,13 +178,33 @@ export function ForWho() {
   );
 }
 
-const COMPARE = [
-  { label: "Bahan alami tanpa tambahan kimia", nura: true, sirup: false, madu: true },
-  { label: "Praktis, tinggal tetes tanpa takar sendok", nura: true, sirup: false, madu: false },
-  { label: "Satu produk untuk anak 2th s.d. lansia", nura: true, sirup: false, madu: true },
-  { label: "Kandungan habbatussauda + zaitun EV terstandar", nura: true, sirup: false, madu: false },
-  { label: "Untuk pemeliharaan harian, bukan hanya saat sakit", nura: true, sirup: false, madu: true },
-];
+// Dua set pembanding, satu per sudut kampanye: batuk dibandingkan dengan sirup
+// batuk, daya tahan tubuh dengan multivitamin tablet. Perbandingannya antar
+// JENIS produk secara umum, bukan antar merek, dan catatan itu ikut tampil di
+// bawah tabel supaya tidak terbaca sebagai klaim terhadap produk tertentu.
+const COMPARE_SETS = {
+  sirup: {
+    otherLabel: "Sirup batuk kimia",
+    rows: [
+      { label: "Bahan alami tanpa tambahan kimia", nura: true, other: false, madu: true },
+      { label: "Praktis, tinggal tetes tanpa takar sendok", nura: true, other: false, madu: false },
+      { label: "Satu produk untuk anak 2th s.d. lansia", nura: true, other: false, madu: true },
+      { label: "Kandungan habbatussauda + zaitun EV terstandar", nura: true, other: false, madu: false },
+      { label: "Untuk pemeliharaan harian, bukan hanya saat sakit", nura: true, other: false, madu: true },
+    ],
+  },
+  vitamin: {
+    otherLabel: "Multivitamin tablet",
+    rows: [
+      { label: "Tinggal tetes, tanpa telan tablet atau kapsul", nura: true, other: false, madu: true },
+      { label: "Satu produk untuk anak 2th s.d. lansia", nura: true, other: false, madu: true },
+      { label: "Bahan alami tanpa tambahan kimia", nura: true, other: false, madu: true },
+      { label: "Kandungan habbatussauda + zaitun EV terstandar", nura: true, other: false, madu: false },
+    ],
+  },
+} as const;
+
+export type CompareSet = keyof typeof COMPARE_SETS;
 
 function CompareMark({ value }: { value: boolean }) {
   return value ? (
@@ -198,7 +218,8 @@ function CompareMark({ value }: { value: boolean }) {
   );
 }
 
-export function Comparison() {
+export function Comparison({ set = "sirup" }: { set?: CompareSet }) {
+  const { otherLabel, rows } = COMPARE_SETS[set];
   return (
     <section className="bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -214,7 +235,7 @@ export function Comparison() {
                   NurAlive
                 </th>
                 <th className="p-4 text-center font-semibold text-ink-soft">
-                  Sirup batuk kimia
+                  {otherLabel}
                 </th>
                 <th className="p-4 text-center font-semibold text-ink-soft">
                   Madu biasa
@@ -222,14 +243,14 @@ export function Comparison() {
               </tr>
             </thead>
             <tbody>
-              {COMPARE.map((row) => (
+              {rows.map((row) => (
                 <tr key={row.label} className="border-b border-line last:border-0">
                   <td className="p-4 text-ink">{row.label}</td>
                   <td className="bg-forest-pale/30 p-4 text-center">
                     <CompareMark value={row.nura} />
                   </td>
                   <td className="p-4 text-center">
-                    <CompareMark value={row.sirup} />
+                    <CompareMark value={row.other} />
                   </td>
                   <td className="p-4 text-center">
                     <CompareMark value={row.madu} />
@@ -239,6 +260,10 @@ export function Comparison() {
             </tbody>
           </table>
         </div>
+        <p className="mt-4 text-xs text-ink-soft">
+          Perbandingan antar jenis produk secara umum, bukan antar merek
+          tertentu.
+        </p>
       </div>
     </section>
   );

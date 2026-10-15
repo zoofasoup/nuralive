@@ -57,9 +57,10 @@ Creative" - dihapus atas permintaan pemilik; jangan tambahkan kembali.)
   Rp185.000/botol untuk semua ukuran, dengan diskon volume bertingkat di
   harga jual (Rp150rb/285rb/417rb/810rb/1.530rb). Kalau harga marketplace
   berubah, update di sini dulu — jangan biarkan situs beda dari listing.
-- Halal: nomor resmi dikonfirmasi dari aset desain tim sendiri (slide 2
-  hero carousel, folder Drive "022A - Deliverables/Website/Design") — ID
-  35410035265411125, sudah dimasukkan ke `BRAND.halalNumber`.
+- Halal: nomor resmi **ID32110022727310625**, sesuai sertifikat Halal asli
+  (poster marketplace slide 6), sudah dimasukkan ke `BRAND.halalNumber`.
+  (Catatan lama di sini menyebut ID35410035265411125 dari slide 2 hero —
+  itu nomor yang KELIRU, lihat bagian Evidence on Hand.)
 - BPOM: nomor resmi **TR266032421** dikonfirmasi pemilik, sudah dimasukkan
   ke `BRAND.bpomNumber`. (Sebelumnya sempat ditahan sampai ada nomor asli —
   pelajaran dari kompetitor "Habi" yang menampilkan nomor placeholder —
@@ -102,11 +103,20 @@ Creative" - dihapus atas permintaan pemilik; jangan tambahkan kembali.)
 - Nomor BPOM (TR266032421) dikonfirmasi dari 2 sumber independen (pemilik
   langsung + dokumen resmi di poster marketplace) — cocok, aman dipakai.
 - Nomor Halal **resmi: ID32110022727310625** (dikonfirmasi pemilik,
-  sesuai dokumen sertifikat asli di poster marketplace Slide 6). Grafis
-  hero carousel slide 2 (`public/hero/slide-2-*.jpg`) masih menampilkan
-  nomor yang KELIRU (ID35410035265411125) karena itu teks yang di-bake ke
-  dalam gambar, bukan teks HTML — **perlu diminta desain ulang ke tim
-  desain**, tidak bisa diperbaiki lewat kode.
+  sesuai dokumen sertifikat asli di poster marketplace Slide 6). Nomor
+  yang KELIRU (ID35410035265411125) ternyata tercetak di banyak grafis
+  desain, bukan hanya slide 2: `hero/slide-2-*`, ketiga-lima `bundles/*`,
+  dan `marketplace/poster-1`. Selain itu teks "Cash On Delivery" tercetak
+  di `bundles/bundle-1`, `marketplace/poster-1`, dan `marketplace/poster-8`
+  (pemilik meminta semua COD dihapus dari situs).
+  **Solusi sementara:** salinan yang sudah dibersihkan (nomor Halal dan
+  COD dihapus, ikon sisanya diseimbangkan) ada di `public/retouched/` dan
+  itulah yang dipakai situs; file asli tetap utuh di folder aslinya.
+  **Tetap perlu diminta ekspor ulang yang benar dari tim desain**, karena
+  retouch ini hanya menghapus, tidak mengganti dengan nomor yang benar.
+  Satu lagi yang belum diselesaikan: `marketplace/poster-4` menulis
+  komposisi 83%/17% sedangkan PDF resmi dan seluruh copy situs 80%/20% —
+  pemilik perlu memastikan mana yang benar.
 - **Dosis resmi (sumber otoritatif: "Petunjuk Penggunaan NurAlive" PDF dari
   pemilik, bukan poster marketplace atau FAQ lama)** — 1 pipet penuh = 1 mL,
   kocok dulu sebelum pakai:

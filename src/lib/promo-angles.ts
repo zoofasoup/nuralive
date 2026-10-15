@@ -9,6 +9,8 @@
 // klaim mekanisme farmakologis di luar izin edar. Tetap pakai kata
 // "membantu"/"memelihara", tidak pernah "menyembuhkan"/"mengobati".
 
+import type { CompareSet } from "@/components/landing/Sections";
+
 export type PromoAngle = {
   id: "imun" | "napas";
   /** Judul tab, bukan H1. */
@@ -20,6 +22,8 @@ export type PromoAngle = {
   /** Judul seksi masalah, mengembangkan hook di H1. */
   problemHeading: string;
   problems: { title: string; desc: string }[];
+  /** Pembanding di tabel: sirup batuk untuk napas, multivitamin untuk imun. */
+  comparison: CompareSet;
   /** Ditempel ke pesan WhatsApp supaya CS tahu angle mana yang bekerja. */
   waContext: string;
   finalCtaHeading: string;
@@ -53,6 +57,7 @@ export const PROMO_ANGLES: Record<PromoAngle["id"], PromoAngle> = {
         desc: "Tiap anggota keluarga beda produk, beda takaran, dan repot diteruskan.",
       },
     ],
+    comparison: "vitamin",
     waContext: "dari halaman daya tahan tubuh",
     finalCtaHeading: "Mulai jaga daya tahan tubuh keluarga hari ini",
   },
@@ -83,6 +88,7 @@ export const PROMO_ANGLES: Record<PromoAngle["id"], PromoAngle> = {
         desc: "Mencari yang bisa dipakai rutin untuk seluruh keluarga, bukan sekadar pereda sesaat.",
       },
     ],
+    comparison: "sirup",
     waContext: "dari halaman batuk & pernapasan",
     finalCtaHeading: "Jaga napas keluarga, mulai hari ini",
   },
